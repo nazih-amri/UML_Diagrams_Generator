@@ -20,6 +20,17 @@ public class ProjectExplorer {
 		project.setPackages(packages);
 		return project;
 	}
+	
+	public static Project parseFilledPackages(File path) {
+		Project project = new Project(path);
+		List<Package> packages = new Vector<Package>();
+		for (String n : getListFilledPackages(path)) {
+			Package p = new Package(n);
+			packages.add(p);
+		}
+		project.setPackages(packages);
+		return project;
+	}
 
 
 }
