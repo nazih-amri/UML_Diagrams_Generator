@@ -4,9 +4,9 @@ public class Parent {
 	
 	private String name;
 	
-	
+	public Parent() {}
 
-	public Parent(String name) {
+	public Parent(String name, int age) {
 		this.name=name;
 	}
 	
