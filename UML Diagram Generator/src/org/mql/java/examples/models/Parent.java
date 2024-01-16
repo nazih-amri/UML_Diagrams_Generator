@@ -10,9 +10,6 @@ public class Parent {
 		this.name=name;
 	}
 	
-	public class inner{
-		public void hell() {}
-	}
 
 	public String getName() {
 		return name;

@@ -7,6 +7,8 @@ public class PackageModel {
 
 	private String name;
 	private List<ClassModel> classes;
+	private List<InterfaceModel> interfaces;
+	private List<EnumerationModel> enumerations;
 	private String absolutePath;
 
 	public PackageModel(String name,String projectPath) {
@@ -38,10 +40,27 @@ public class PackageModel {
 	public void setAbsolutePath(String absolutePath) {
 		this.absolutePath = absolutePath;
 	}
+	
+	public List<InterfaceModel> getInterfaces() {
+		return interfaces;
+	}
+	
+	public void setInterfaces(List<InterfaceModel> interfaces) {
+		this.interfaces = interfaces;
+	}
+	
+	public List<EnumerationModel> getEnumerations() {
+		return enumerations;
+	}
+	
+	public void setEnumerations(List<EnumerationModel> enumerations) {
+		this.enumerations = enumerations;
+	}
 
 	@Override
 	public String toString() {
 		return "Package [name=" + name + ", classes=" + classes + "]";
 	}
+	
 
 }

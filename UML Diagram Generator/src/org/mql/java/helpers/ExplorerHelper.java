@@ -3,36 +3,21 @@ package org.mql.java.helpers;
 import java.io.File;
 import java.util.List;
 import java.util.Vector;
+import org.mql.java.models.ProjectModel;
 
 public class ExplorerHelper {
 
 	public ExplorerHelper() {
 	}
 	
-	public static List<String> getListAllPackages(File dir) {
+	
+	public static List<String> getListFilledPackages(ProjectModel project) {
+		File file = new File(project.getAbsolutePath());
 		List<String> packageNames = new Vector<>();
-		scanAllPackages(dir, "", packageNames);
+		scanFilledPackages(file, "", packageNames);
 		return packageNames;
 	}
 	
-	public static List<String> getListFilledPackages(File dir) {
-		List<String> packageNames = new Vector<>();
-		scanFilledPackages(dir, "", packageNames);
-		return packageNames;
-	}
-	
-	private static void scanAllPackages(File dir, String currentP, List<String> packageNames) {
-		if (dir.listFiles() != null) {
-			for (File file : dir.listFiles()) {
-				if (file.isDirectory()) {
-					String packageName = currentP.isEmpty() ? file.getName()
-							: currentP + "." + file.getName();
-					packageNames.add(packageName);
-					scanAllPackages(file, packageName, packageNames);
-				}
-			}
-		}
-	}
 	
 	private static void scanFilledPackages(File dir, String currentPackage, List<String> packageNames) {
 		if (dir.listFiles() != null) {
@@ -40,7 +25,7 @@ public class ExplorerHelper {
 				if (file.isDirectory()) {
 					String packageName = currentPackage.isEmpty() ? file.getName()
 							: currentPackage + "." + file.getName();
-					if (isConatainsClasses(file)) {
+					if (isContainsClasses(file)) {
 						packageNames.add(packageName);
 					}
 					scanFilledPackages(file, packageName, packageNames);
@@ -49,7 +34,7 @@ public class ExplorerHelper {
 		}
 	}
 	
-	private static boolean isConatainsClasses(File file) {
+	private static boolean isContainsClasses(File file) {
 		List<File> files = new Vector<File>();
 		for (File f : file.listFiles()) {
 			if (f.getName().endsWith(".class")) {
@@ -59,16 +44,20 @@ public class ExplorerHelper {
 		return files != null && files.size() > 0;
 	}
 
-	public static String[] scanPackage(File projectPath, String packageName) {
-		String packageFolder = projectPath+"\\"+ packageName.replace('.', '\\');
+	public static String[] scanPackage(File packageFolder) {
 		List<String> list = new Vector<String>();
-		File dir = new File(packageFolder);
-		File classes[] = dir.listFiles();
+		File classes[] = packageFolder.listFiles();
 		for (File f : classes) {
 			if(f.getAbsolutePath().endsWith(".class"))
 			list.add(f.getName());
 		}
 		return list.toArray(new String[list.size()]);
 	}
+	
+	public static String getClassPackageName(String absolutePath) {
+		return absolutePath.substring(absolutePath.lastIndexOf("\\bin\\") + 5)
+				                 .replace(".class", "").replace(File.separator, ".");
+	}
+	
 
 }
