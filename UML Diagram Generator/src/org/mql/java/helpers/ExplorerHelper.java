@@ -59,5 +59,11 @@ public class ExplorerHelper {
 				                 .replace(".class", "").replace(File.separator, ".");
 	}
 	
+	public static File getRootFromPath(File file) {
+		return new File(file.getAbsolutePath().substring(0,
+				file.getAbsolutePath().lastIndexOf("\\bin\\") + 4)); 
+
+	}
+	
 
 }

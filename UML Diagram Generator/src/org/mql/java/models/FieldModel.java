@@ -1,13 +1,13 @@
 package org.mql.java.models;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import java.lang.reflect.Type;
 
 public class FieldModel {
 
 	private String name;
 	private String modifier;
-	private Type type;
+	private Class<?> type;
 	private boolean isPrimitive;
 	private boolean isMemberClass;
 
@@ -16,7 +16,7 @@ public class FieldModel {
 
 	}
 
-	public FieldModel(java.lang.reflect.Field field) {
+	public FieldModel(Field field) {
 		this.name = field.getName();
 		this.modifier = Modifier.toString(field.getModifiers());
 		this.type = field.getType();
@@ -41,11 +41,11 @@ public class FieldModel {
 		this.modifier = modifier;
 	}
 
-	public Type getType() {
+	public Class<?> getType() {
 		return type;
 	}
 
-	public void setType(Type type) {
+	public void setType(Class<?> type) {
 		this.type = type;
 	}
 

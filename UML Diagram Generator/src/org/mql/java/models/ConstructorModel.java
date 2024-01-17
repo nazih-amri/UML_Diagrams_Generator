@@ -1,29 +1,26 @@
 package org.mql.java.models;
 
-import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 
-public class MethodModel {
+public class ConstructorModel {
 	
 	private String name;
 	private String modifier;
-	private String returnType;
 	private List<Parameter> parameters;
 
-	public MethodModel(String name) {
+	public ConstructorModel(String name) {
 		this.name=name;
-		parameters = new Vector<java.lang.reflect.Parameter>();
+		this.parameters= new Vector<java.lang.reflect.Parameter>();
 	}
-	
-	public MethodModel(Method method) {
-		this(method.getName());
-		this.modifier=Modifier.toString(method.getModifiers());
-		this.returnType = method.getReturnType().getSimpleName();
-		this.parameters= Arrays.asList(method.getParameters());
+
+	public ConstructorModel(java.lang.reflect.Constructor<?> constructor) {
+		this(constructor.getName());
+		this.modifier= Modifier.toString(constructor.getModifiers());
+		parameters = Arrays.asList(constructor.getParameters());
 	}
 
 	public String getName() {
@@ -42,14 +39,6 @@ public class MethodModel {
 		this.modifier = modifier;
 	}
 
-	public String getReturnType() {
-		return returnType;
-	}
-
-	public void setReturnType(String returnType) {
-		this.returnType = returnType;
-	}
-
 	public List<java.lang.reflect.Parameter> getParameters() {
 		return parameters;
 	}
@@ -57,6 +46,13 @@ public class MethodModel {
 	public void setParameters(List<java.lang.reflect.Parameter> parameters) {
 		this.parameters = parameters;
 	}
+
+	@Override
+	public String toString() {
+		return "Constructor [name=" + name + ", modifier=" + modifier + ", parameters=" + parameters + "]";
+	}
+	
+	
 	
 	
 

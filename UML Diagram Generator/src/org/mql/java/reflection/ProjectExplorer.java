@@ -40,14 +40,10 @@ public class ProjectExplorer {
 	        List<ClassModel> classes = new Vector<>();
 	        List<InterfaceModel> interfaces = new Vector<>();
 	        List<EnumerationModel> enumerations = new Vector<>();
-
 	        for (ClassModel c : pack.getClasses()) {
-	            String packageName = pack.getName() + "\\" + c.getName();
-	            String path = project.getAbsolutePath() + "\\" + packageName.replace(".", "\\")
-	                    .replaceAll("\\\\class$", ".class");
-	            ModelParser parser = new ModelParser(new File(path));
+	            String classPath = pack.getAbsolutePath()+"\\"+c.getName().replaceAll("\\\\class$", ".class");                
+	            ModelParser parser = new ModelParser(new File(classPath));
 	            Object returned = parser.parse();
-
 	            if (returned instanceof ClassModel)
 	                classes.add((ClassModel) returned);
 	            else if (returned instanceof InterfaceModel)

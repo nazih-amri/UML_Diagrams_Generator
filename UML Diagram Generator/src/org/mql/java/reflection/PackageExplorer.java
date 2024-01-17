@@ -17,8 +17,7 @@ public class PackageExplorer {
 	public static PackageModel parse(String packageName, String projectPath) {
 		PackageModel pack = new PackageModel(packageName,projectPath);
 		List<ClassModel> cls = new Vector<>();
-		File file = new File(projectPath+"\\"+packageName.replace(".", "\\"));
-		for (String name : scanPackage(file)) {
+		for (String name : scanPackage(new File(pack.getAbsolutePath()))) {
 			ClassModel c = new ClassModel(name);
 			cls.add(c);
 		}
