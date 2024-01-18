@@ -7,20 +7,25 @@ public class ClassModel {
 
 	private String name;
 	private ClassModel superClass;
+	private ClassModel externalClass;
 	private List<InterfaceModel> interfaces;
 	private List<FieldModel> fields;
 	private List<ConstructorModel> constructors;
 	private List<MethodModel> methods;
+	private List<RelationModel> relations;
 	private String simpleName;
 	private String type;
+	
 
 	public ClassModel(String name) {
 		this.name = name;
 		this.superClass = null;
+		this.externalClass=null;
 		this.interfaces = new Vector<InterfaceModel>();
 		this.fields = new Vector<FieldModel>();
 		this.constructors = new Vector<ConstructorModel>();
 		this.methods = new Vector<MethodModel>();
+		this.relations = new Vector<RelationModel>();
 		this.type = "class";
 	}
 
@@ -86,6 +91,22 @@ public class ClassModel {
 
 	public String getType() {
 		return type;
+	}
+	
+	public List<RelationModel> getRelations() {
+		return relations;
+	}
+	
+	public void setRelations(List<RelationModel> relations) {
+		this.relations = relations;
+	}
+	
+	public ClassModel getExternalClass() {
+		return externalClass;
+	}
+	
+	public void setExternalClass(ClassModel externalClass) {
+		this.externalClass = externalClass;
 	}
 
 }

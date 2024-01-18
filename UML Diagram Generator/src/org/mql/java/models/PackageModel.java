@@ -16,6 +16,14 @@ public class PackageModel {
 		classes = new Vector<ClassModel>();
 		this.absolutePath= projectPath+"\\"+ name.replace('.', '\\');
 	}
+	
+	public ClassModel getClassByName(String name) {
+		for (ClassModel classModel : classes) {
+			if(name.equals(classModel.getName()))
+				return classModel;
+		}
+		return null;
+	}
 
 	public String getName() {
 		return name;

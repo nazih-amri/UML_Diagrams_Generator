@@ -40,6 +40,15 @@ public class ProjectModel {
 	public void setPackages(List<PackageModel> packages) {
 		this.packages = packages;
 	}
+	
+	public PackageModel getPackage(String name) {
+		for (PackageModel packageModel : packages) {
+			if(name.equals(packageModel.getName())) {
+				return packageModel;
+			}
+		}
+		return null; // in case if no package found
+	}
 
 	public String getAbsolutePath() {
 		return absolutePath;

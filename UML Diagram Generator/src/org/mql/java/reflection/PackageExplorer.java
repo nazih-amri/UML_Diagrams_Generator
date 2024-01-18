@@ -5,7 +5,6 @@ import static org.mql.java.helpers.ExplorerHelper.scanPackage;
 import java.io.File;
 import java.util.List;
 import java.util.Vector;
-
 import org.mql.java.models.ClassModel;
 import org.mql.java.models.PackageModel;
 

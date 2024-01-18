@@ -1,6 +1,6 @@
 package org.mql.java.examples.models;
 
-public class Dog  {
+public class Dog  extends Animal {
 
 	Animal dog;
 
