@@ -63,7 +63,7 @@ public class ParserHelper {
 				methods.add(new MethodModel(meth));
 			}
 			in.setMethods(methods);
-			in.setType("interface");
+//			in.setType("interface");
 			interfaces.add(in);
 		}
 		return interfaces;

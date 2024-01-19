@@ -1,6 +1,6 @@
 package org.mql.java.models;
 
-public class ConstantModel {
+public class ConstantModel  {
 
 	private final Object constant;
 	public ConstantModel(Object constant) {

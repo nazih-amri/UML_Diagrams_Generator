@@ -1,18 +1,20 @@
 package org.mql.java.models;
 
+import static org.mql.java.enumerations.BaseModelType.ANNOTATION;
+
 import java.util.List;
 import java.util.Vector;
 
-public class EnumerationModel {
+import org.mql.java.enumerations.BaseModelType;
+
+public class EnumerationModel implements BaseModel {
 	
 	private String name;
 	private String simpleName;
-	private String type;
 	List<ConstantModel> constants;
 
 	public EnumerationModel(String name) {
 		this.name=name;
-		this.type="enumeration";
 		this.constants = new Vector<>();
 	}
 	
@@ -32,12 +34,8 @@ public class EnumerationModel {
 		this.simpleName = simpleName;
 	}
 	
-	public String getType() {
-		return type;
-	}
-	
-	public void setType(String type) {
-		this.type = type;
+	public BaseModelType getModelType() {
+		return BaseModelType.ENUMERATION;
 	}
 	
 	public List<ConstantModel> getConstants() {

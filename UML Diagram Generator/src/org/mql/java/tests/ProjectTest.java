@@ -1,13 +1,8 @@
 package org.mql.java.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.io.File;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.junit.jupiter.api.Test;
-import org.mql.java.models.ClassModel;
 import org.mql.java.models.ProjectModel;
 import org.mql.java.reflection.ProjectExplorer;
 

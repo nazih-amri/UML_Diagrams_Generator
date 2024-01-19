@@ -1,5 +1,7 @@
 package org.mql.java.models;
 
+import static org.mql.java.enumerations.BaseModelType.ANNOTATION;
+
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
@@ -7,7 +9,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 
-public class MethodModel {
+import org.mql.java.enumerations.BaseModelType;
+
+public class MethodModel implements BaseModel {
 	
 	private String name;
 	private String modifier;
@@ -16,7 +20,7 @@ public class MethodModel {
 
 	public MethodModel(String name) {
 		this.name=name;
-		parameters = new Vector<java.lang.reflect.Parameter>();
+		parameters = new Vector<Parameter>();
 	}
 	
 	public MethodModel(Method method) {
@@ -50,14 +54,16 @@ public class MethodModel {
 		this.returnType = returnType;
 	}
 
-	public List<java.lang.reflect.Parameter> getParameters() {
+	public List<Parameter> getParameters() {
 		return parameters;
 	}
 
-	public void setParameters(List<java.lang.reflect.Parameter> parameters) {
+	public void setParameters(List<Parameter> parameters) {
 		this.parameters = parameters;
 	}
 	
-	
+	public BaseModelType getModelType() {
+		return BaseModelType.METHOD;
+	}
 
 }

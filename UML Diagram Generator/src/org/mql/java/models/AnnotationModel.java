@@ -3,17 +3,18 @@ package org.mql.java.models;
 import java.util.List;
 import java.util.Vector;
 
-public class AnnotationModel {
+import org.mql.java.enumerations.BaseModelType;
+import static org.mql.java.enumerations.BaseModelType.*;
+
+public class AnnotationModel implements BaseModel {
 
 	private String name;
 	private String simpleName;
 	private List<MethodModel> methods;
-	private String type;
 	public AnnotationModel(String name) {
 		this.name=name;
 		this.methods= new Vector<MethodModel>();
 		this.simpleName=null;
-		this.type="annotation";
 	}
 	public String getName() {
 		return name;
@@ -33,15 +34,10 @@ public class AnnotationModel {
 	public void setMethods(List<MethodModel> methods) {
 		this.methods = methods;
 	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
+	public BaseModelType getModelType() {
+		return ANNOTATION;
 	}
 
-	
-	
 	
 
 }

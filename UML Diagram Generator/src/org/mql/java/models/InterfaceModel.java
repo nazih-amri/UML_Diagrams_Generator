@@ -1,23 +1,25 @@
 package org.mql.java.models;
 
+import static org.mql.java.enumerations.BaseModelType.ANNOTATION;
+
 import java.util.List;
 import java.util.Vector;
 
-public class InterfaceModel {
+import org.mql.java.enumerations.BaseModelType;
+
+public class InterfaceModel implements BaseModel {
 
 	private String name;
 	private List<InterfaceModel> implemetingInterfaces;
 	private List<FieldModel> fields;
 	private List<MethodModel> methods;
 	private String simpleName;
-	private String type;
 
 	public InterfaceModel(String name) {
 		this.name = name;
 		this.implemetingInterfaces = new Vector<InterfaceModel>();
 		this.fields = new Vector<FieldModel>();
 		this.methods = new Vector<MethodModel>();
-		this.type = "interface";
 	}
 
 	public String getName() {
@@ -66,12 +68,8 @@ public class InterfaceModel {
 				+ ", methods=" + methods + ", simpleName=" + simpleName + "]";
 	}
 
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public String getType() {
-		return type;
+	public BaseModelType getModelType() {
+		return BaseModelType.INTERFACE;
 	}
 
 }

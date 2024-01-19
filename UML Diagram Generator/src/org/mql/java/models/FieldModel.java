@@ -1,15 +1,21 @@
 package org.mql.java.models;
 
+import static org.mql.java.enumerations.BaseModelType.ANNOTATION;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.lang.reflect.Type;
 
-public class FieldModel {
+import org.mql.java.enumerations.BaseModelType;
+
+public class FieldModel implements BaseModel {
 
 	private String name;
 	private String modifier;
 	private Class<?> type;
 	private boolean isPrimitive;
 	private boolean isMemberClass;
+	private Type genericType;
 
 	public FieldModel(String name) {
 		this.name = name;
@@ -22,7 +28,7 @@ public class FieldModel {
 		this.type = field.getType();
 		this.isPrimitive = field.getType().isPrimitive();
 		this.isMemberClass = field.getType().isMemberClass();
-
+		this.genericType = field.getGenericType();
 	}
 
 	public String getName() {
@@ -44,6 +50,11 @@ public class FieldModel {
 	public Class<?> getType() {
 		return type;
 	}
+	
+	@Override
+	public BaseModelType getModelType() {
+		return BaseModelType.FIELD;
+	}
 
 	public void setType(Class<?> type) {
 		this.type = type;
@@ -56,5 +67,14 @@ public class FieldModel {
 	public boolean isMemberClass() {
 		return isMemberClass;
 	}
+	
+	public Type getGenericType() {
+		return genericType;
+	}
+	
+	public void setGenericType(Type genericType) {
+		this.genericType = genericType;
+	}
+
 
 }
