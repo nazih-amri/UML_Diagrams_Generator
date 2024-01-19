@@ -17,8 +17,10 @@ public class ProjectExplorer {
 	
 	private ProjectModel project;
 	private Logger logger;
+	List<ClassModel> projectClasses;
 	public ProjectExplorer(File path) {
 		this.project = new ProjectModel(path);
+		this.projectClasses= new Vector<>();
 	}
 	
 	public  ProjectModel parse() {
@@ -79,5 +81,6 @@ public class ProjectExplorer {
 	        pack.setEnumerations(enumerations);
 	    }
 	}
+
 }
 	
