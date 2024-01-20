@@ -1,7 +1,11 @@
 package org.mql.java.helpers;
 
+import static org.mql.java.enumerations.RelationType.AGGREGATION;
+import static org.mql.java.enumerations.RelationType.ASSOCIATION;
+import static org.mql.java.enumerations.RelationType.COMPOSITION;
+
 import java.io.File;
-import java.lang.reflect.Field;
+import java.lang.reflect.Parameter;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Collection;
@@ -9,8 +13,10 @@ import java.util.List;
 import java.util.Vector;
 
 import org.mql.java.models.ClassModel;
+import org.mql.java.models.ConstructorModel;
 import org.mql.java.models.FieldModel;
 import org.mql.java.models.ProjectModel;
+import org.mql.java.models.RelationModel;
 
 public class ExplorerHelper {
 
@@ -99,6 +105,21 @@ public class ExplorerHelper {
             }
         }
         return false;
+    }
+    
+    public static RelationModel checkConstructors(ClassModel source, ClassModel target,FieldModel field) {
+        for (ConstructorModel constructor : source.getConstructors()) {
+            if (constructor.getParameters().size() > 0) {
+                for (Parameter p : constructor.getParameters()) {
+                    if (p.getType().equals(field.getType())) {
+                        return new RelationModel(AGGREGATION, source.getName(), target.getName());
+                    }
+                }
+                return new RelationModel(COMPOSITION, source.getName(), target.getName());
+            }
+            return new RelationModel(ASSOCIATION, source.getName(), target.getName());
+        }
+		return null;
     }
 	
 	
