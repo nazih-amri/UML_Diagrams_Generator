@@ -1,0 +1,15 @@
+### Project Relations : 
+### Relation : AGGREGATION--->, source: org.mql.java.xml.models.Author , target : org.mql.java.xml.models.Date
+### Relation : REALIZATION--->, source: org.mql.java.xml.models.Child , target : org.mql.java.xml.models.Hello
+### Relation : AGGREGATION--->, source: org.mql.java.xml.models.Child , target : org.mql.java.xml.models.Parent
+### Relation : AGGREGATION--->, source: org.mql.java.xml.models.Parent , target : org.mql.java.xml.models.Child
+### Relation : ASSOCIATION--->, source: org.mql.java.xml.sax.FormParser , target : org.mql.java.xml.ui.ButtonPanel
+### Relation : ASSOCIATION--->, source: org.mql.java.xml.sax.FormParser , target : org.mql.java.xml.ui.ChoicePanel
+### Relation : ASSOCIATION--->, source: org.mql.java.xml.sax.FormParser , target : org.mql.java.xml.ui.Form
+### Relation : ASSOCIATION--->, source: org.mql.java.xml.sax.FormParser2 , target : org.mql.java.xml.ui.ButtonPanel
+### Relation : ASSOCIATION--->, source: org.mql.java.xml.sax.FormParser2 , target : org.mql.java.xml.ui.ChoicePanel
+### Relation : ASSOCIATION--->, source: org.mql.java.xml.sax.FormParser2 , target : org.mql.java.xml.ui.Form
+### Relation : GENERALIZATION--->, source: org.mql.java.xml.sax.FormParserMe , target : org.mql.java.xml.sax.FormHandler
+### Relation : ASSOCIATION--->, source: org.mql.java.xml.sax.FormParserMe , target : org.mql.java.xml.ui.ButtonPanel
+### Relation : ASSOCIATION--->, source: org.mql.java.xml.sax.FormParserMe , target : org.mql.java.xml.ui.ChoicePanel
+### Relation : ASSOCIATION--->, source: org.mql.java.xml.sax.FormParserMe , target : org.mql.java.xml.ui.Form
