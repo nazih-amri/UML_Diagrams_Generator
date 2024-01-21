@@ -18,6 +18,7 @@
 ### class : org.mql.java.xml.models.Test2
 ### class : org.mql.java.xml.models.Test3
 ### interface : org.mql.java.xml.models.Hello
+### interface : org.mql.java.xml.models.Hello2
 ### package : org.mql.java.xml.sax
 ### class : org.mql.java.xml.sax.FormHandler
 ### class : org.mql.java.xml.sax.FormParser

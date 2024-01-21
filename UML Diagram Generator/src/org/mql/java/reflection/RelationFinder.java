@@ -26,7 +26,10 @@ public class RelationFinder {
 			for (ClassModel target : classes) {
 				if (!source.getName().equals(target.getName())) {
 					Optional.ofNullable(getInheritance(source, target)).ifPresent(relations::add);
-					Optional.ofNullable(getAssociation(source, target)).ifPresent(relations::add);
+					Optional.ofNullable(getAssociation(source, target)).ifPresent(association -> {
+			            source.add(association);
+			            relations.add(association);
+			        });					
 				}
 			}
 		}
@@ -38,7 +41,9 @@ public class RelationFinder {
 
 	private static RelationModel getInheritance(ClassModel source, ClassModel target) {
 		if (source.getSuperClass() != null && source.getSuperClass().getName().equals(target.getName())) {
-			return new RelationModel(GENERALIZATION, source.getName(), target.getName());
+			RelationModel relation =new RelationModel(GENERALIZATION, source.getName(), target.getName());
+			source.add(relation);
+			return relation;
 		}
 		return null;
 	}
@@ -46,7 +51,9 @@ public class RelationFinder {
 	private static List<RelationModel> getImplemetations(ClassModel cls) {
 		List<RelationModel> rm = new Vector<>();
 		for (InterfaceModel in : cls.getInterfaces()) {
-			rm.add(new RelationModel(REALIZATION, cls.getName(), in.getName()));
+			RelationModel relation =new RelationModel(REALIZATION, cls.getName(), in.getName());
+			cls.add(relation);
+			rm.add(relation);
 		}
 		return rm;
 	}

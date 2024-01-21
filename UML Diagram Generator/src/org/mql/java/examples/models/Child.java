@@ -1,11 +1,11 @@
 package org.mql.java.examples.models;
 
+import java.util.List;
 
 public class Child extends Parent implements Person {
 	private String name;
-	
+	private List<Parent> parents;
 	public Child() {
-		super();
 	}
 
 	public Child(String parentName,String name) {

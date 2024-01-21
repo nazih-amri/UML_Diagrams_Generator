@@ -6,13 +6,12 @@ import static org.mql.java.helpers.ModelLoader.*;
 
 public class ModelParser {
 
-	private Class<?> model;
-	public ModelParser(File path) {
-		this.model = loadModel(path);
+	public ModelParser() {
 	}
 
 	
-	public Object parse() {
+	public static Object parse(File path) {
+		Class<?> model = loadModel(path);
 	    if (model != null) {
 	        if (model.isAnnotation()) return annotationParser(model);
 	        if (model.isInterface()) return interfaceParser(model);

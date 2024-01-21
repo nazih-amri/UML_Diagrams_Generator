@@ -55,7 +55,6 @@ public class ModelLoader {
 		annotation.setSimpleName(model.getSimpleName());
 		annotation.setMethods(
 				Arrays.stream(model.getDeclaredMethods()).map(MethodModel::new).collect(Collectors.toList()));
-//		annotation.setType("annotation");
 		return annotation;
 	}
 

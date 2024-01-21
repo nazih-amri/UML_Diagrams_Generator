@@ -1,7 +1,5 @@
 package org.mql.java.models;
 
-import static org.mql.java.enumerations.BaseModelType.ANNOTATION;
-
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
@@ -25,7 +23,7 @@ public class MethodModel implements BaseModel {
 	
 	public MethodModel(Method method) {
 		this(method.getName());
-		this.modifier=Modifier.toString(method.getModifiers());
+		setModifier(method.getModifiers());
 		this.returnType = method.getReturnType().getSimpleName();
 		this.parameters= Arrays.asList(method.getParameters());
 	}
@@ -42,8 +40,16 @@ public class MethodModel implements BaseModel {
 		return modifier;
 	}
 
+	public void setModifier(int modifier) {
+		this.modifier = Modifier.toString(modifier);
+		if("".equals(this.modifier))
+			this.modifier="public";
+	}
+	
 	public void setModifier(String modifier) {
 		this.modifier = modifier;
+		if("".equals(this.modifier))
+			this.modifier="public";
 	}
 
 	public String getReturnType() {

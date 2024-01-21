@@ -1,6 +1,5 @@
 package org.mql.java.models;
 
-import static org.mql.java.enumerations.BaseModelType.ANNOTATION;
 
 import java.util.List;
 import java.util.Vector;

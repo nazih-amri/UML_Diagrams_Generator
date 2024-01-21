@@ -3,7 +3,9 @@ package org.mql.java.models;
 import java.io.File;
 import java.util.List;
 
-public class ProjectModel {
+import org.mql.java.enumerations.BaseModelType;
+
+public class ProjectModel implements BaseModel {
 
 	private String name;
 	private List<PackageModel> packages;
@@ -64,6 +66,10 @@ public class ProjectModel {
 
 	public void setRelations(List<RelationModel> relations) {
 		this.relations = relations;
+	}
+	
+	public BaseModelType getModelType() {
+		return BaseModelType.PROJECT;
 	}
 
 }

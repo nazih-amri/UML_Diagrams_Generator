@@ -1,7 +1,5 @@
 package org.mql.java.models;
 
-import static org.mql.java.enumerations.BaseModelType.ANNOTATION;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;

@@ -1,7 +1,5 @@
 package org.mql.java.models;
 
-import static org.mql.java.enumerations.BaseModelType.ANNOTATION;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Type;
@@ -24,7 +22,7 @@ public class FieldModel implements BaseModel {
 
 	public FieldModel(Field field) {
 		this.name = field.getName();
-		this.modifier = Modifier.toString(field.getModifiers());
+		setModifier(field.getModifiers());
 		this.type = field.getType();
 		this.isPrimitive = field.getType().isPrimitive();
 		this.isMemberClass = field.getType().isMemberClass();
@@ -43,8 +41,16 @@ public class FieldModel implements BaseModel {
 		return modifier;
 	}
 
+	public void setModifier(int modifier) {
+		this.modifier = Modifier.toString(modifier);
+		if("".equals(this.modifier))
+			this.modifier="public";
+	}
+	
 	public void setModifier(String modifier) {
 		this.modifier = modifier;
+		if("".equals(this.modifier))
+			this.modifier="public";
 	}
 
 	public Class<?> getType() {

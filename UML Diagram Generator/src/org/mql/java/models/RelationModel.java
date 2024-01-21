@@ -26,8 +26,13 @@ public class RelationModel implements BaseModel {
 		this.relationField = relationField;
 	}
 
-	public RelationType getName() {
+	public RelationType getNameEnum() {
 		return name;
+	}
+	
+	@Override
+	public String getName() {
+		return name.name().toLowerCase();
 	}
 
 	public void setName(RelationType name) {

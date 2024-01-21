@@ -52,7 +52,7 @@ public class ProjectGenerator {
 		Text value = document.createTextNode(project.getName());
 		name.appendChild(value);
 		root.appendChild(name);
-		
+		// using Optional to handle nullable results
 		Optional.ofNullable(project.getPackages())
         .ifPresent(packages -> packages.forEach(p -> appendPackage(p, root, document)));
 		
@@ -115,7 +115,7 @@ public class ProjectGenerator {
 	
 	private static void appendRelations(RelationModel relation, Element parent, Document document) {
 		Element rel= createNode("relation", document);
-		setAttribute(rel, "type", relation.getName().name().toLowerCase());
+		setAttribute(rel, "type", relation.getNameEnum().name().toLowerCase());
 		Element source = createNode("source", document);
 		source.appendChild(document.createTextNode(relation.getSource()));
 		rel.appendChild(source);
