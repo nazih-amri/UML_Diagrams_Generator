@@ -1,18 +1,21 @@
 package org.mql.java.reflection;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
-
 import org.mql.java.loggers.FileLogger;
 import org.mql.java.loggers.Logger;
 import org.mql.java.models.AnnotationModel;
+import org.mql.java.models.BaseModel;
 import org.mql.java.models.ClassModel;
 import org.mql.java.models.EnumerationModel;
 import org.mql.java.models.InterfaceModel;
 import org.mql.java.models.PackageModel;
 import org.mql.java.models.ProjectModel;
+
 import static org.mql.java.helpers.ExplorerHelper.*;
+import static org.mql.java.enumerations.BaseModelType.*;
 
 public class ProjectExplorer {
 
@@ -56,35 +59,19 @@ public class ProjectExplorer {
 	private void loadModels() {
 		setLogger(new FileLogger("resources/logs/explorer.log"));
 		log("Project", project.getName());
-
 		for (PackageModel pack : project.getPackages()) {
 			log("package", pack.getName());
-			List<ClassModel> classes = new Vector<>();
-			List<InterfaceModel> interfaces = new Vector<>();
-			List<AnnotationModel> annotations = new Vector<>();
-			List<EnumerationModel> enumerations = new Vector<>();
+			List<BaseModel> models= new Vector<BaseModel>();
 			for (ClassModel c : pack.getClasses()) {
 				String classPath = pack.getAbsolutePath() + "\\" + c.getName().replaceAll("\\\\class$", ".class");
-				Object returned = ModelParser.parse(new File(classPath));
-				if (returned instanceof ClassModel)
-					classes.add((ClassModel) returned);
-				else if (returned instanceof InterfaceModel)
-					interfaces.add((InterfaceModel) returned);
-				else if (returned instanceof EnumerationModel)
-					enumerations.add((EnumerationModel) returned);
-				else if (returned instanceof AnnotationModel)
-					annotations.add((AnnotationModel) returned);
+				BaseModel returned = ModelParser.parse(new File(classPath));
+				models.add(returned);
 			}
-			classes.forEach(cls -> log("class", cls.getName()));
-			interfaces.forEach(in -> log("interface", in.getName()));
-			annotations.forEach(an -> log("annotation", an.getName()));
-			enumerations.forEach(em -> log("enumeration", em.getName()));
-
-			pack.setClasses(classes);
-			pack.setInterfaces(interfaces);
-			pack.setEnumerations(enumerations);
-			pack.setAnnotations(annotations);
-
+			models.forEach(model-> log(model.getModelType().name(), model.getName()));
+			pack.setClasses(Arrays.asList(models.stream().filter(item->CLASS.equals(item.getModelType())).toArray(ClassModel[]::new)));
+			pack.setInterfaces(Arrays.asList(models.stream().filter(item->INTERFACE.equals(item.getModelType())).toArray(InterfaceModel[]::new)));
+			pack.setEnumerations(Arrays.asList(models.stream().filter(item->ENUMERATION.equals(item.getModelType())).toArray(EnumerationModel[]::new)));
+			pack.setAnnotations(Arrays.asList(models.stream().filter(item->ANNOTATION.equals(item.getModelType())).toArray(AnnotationModel[]::new)));
 		}
 	}
 

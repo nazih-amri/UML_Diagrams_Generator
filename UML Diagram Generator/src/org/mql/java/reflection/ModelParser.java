@@ -2,6 +2,8 @@ package org.mql.java.reflection;
 
 import java.io.File;
 
+import org.mql.java.models.BaseModel;
+
 import static org.mql.java.helpers.ModelLoader.*;
 
 public class ModelParser {
@@ -10,7 +12,7 @@ public class ModelParser {
 	}
 
 	
-	public static Object parse(File path) {
+	public static BaseModel parse(File path) {
 		Class<?> model = loadModel(path);
 	    if (model != null) {
 	        if (model.isAnnotation()) return annotationParser(model);
