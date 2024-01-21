@@ -1,6 +1,8 @@
 package org.mql.java.xml;
 
 import java.io.File;
+import java.util.Optional;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
@@ -18,6 +20,7 @@ import org.mql.java.models.InterfaceModel;
 import org.mql.java.models.MethodModel;
 import org.mql.java.models.PackageModel;
 import org.mql.java.models.ProjectModel;
+import org.mql.java.models.RelationModel;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Text;
@@ -49,9 +52,15 @@ public class ProjectGenerator {
 		Text value = document.createTextNode(project.getName());
 		name.appendChild(value);
 		root.appendChild(name);
-		for (PackageModel p : project.getPackages()) {
-			appendPackage(p, root, document);
-		}
+		
+		Optional.ofNullable(project.getPackages())
+        .ifPresent(packages -> packages.forEach(p -> appendPackage(p, root, document)));
+		
+		Element relations = createNode("relations",document);
+		Optional.ofNullable(project.getRelations())
+        .ifPresent(relationsList -> relationsList.forEach(relation -> appendRelations(relation, relations, document)));
+		root.appendChild(relations);
+
 	}
 
 	public static Element createNode(String name, Document document) {
@@ -102,6 +111,18 @@ public class ProjectGenerator {
 	    });
 
 	    parent.appendChild(method);
+	}
+	
+	private static void appendRelations(RelationModel relation, Element parent, Document document) {
+		Element rel= createNode("relation", document);
+		setAttribute(rel, "type", relation.getName().name().toLowerCase());
+		Element source = createNode("source", document);
+		source.appendChild(document.createTextNode(relation.getSource()));
+		rel.appendChild(source);
+		Element target = createNode("target", document);
+		target.appendChild(document.createTextNode(relation.getTarget()));
+		rel.appendChild(target);
+		parent.appendChild(rel);
 	}
 
 

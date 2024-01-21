@@ -5,15 +5,15 @@
         <class id="org.mql.java.xml.Examples">
             <name>Examples</name>
             <constructor name="org.mql.java.xml.Examples" visibility="public"/>
-            <method name="exp6" return-type="void" visibility="public"/>
-            <method name="exp02" return-type="void" visibility="public"/>
-            <method name="exp3" return-type="void" visibility="public"/>
-            <method name="exp4" return-type="void" visibility="public"/>
-            <method name="exp01" return-type="void" visibility="public"/>
-            <method name="exp5" return-type="void" visibility="public"/>
             <method name="main" return-type="void" visibility="public static">
                 <parameter type="[Ljava.lang.String;"/>
             </method>
+            <method name="exp01" return-type="void" visibility="public"/>
+            <method name="exp02" return-type="void" visibility="public"/>
+            <method name="exp3" return-type="void" visibility="public"/>
+            <method name="exp5" return-type="void" visibility="public"/>
+            <method name="exp6" return-type="void" visibility="public"/>
+            <method name="exp4" return-type="void" visibility="public"/>
         </class>
         <annotation id="org.mql.java.xml.Annot1">
             <name>Annot1</name>
@@ -42,18 +42,11 @@
             <field name="node" type="org.w3c.dom.Node" visibility="private"/>
             <field name="children" type="org.mql.java.xml.dom.XMLNode[]" visibility="private"/>
             <constructor name="org.mql.java.xml.dom.XMLNode" visibility="public">
-                <parameter type="org.w3c.dom.Node"/>
+                <parameter type="java.lang.String"/>
             </constructor>
             <constructor name="org.mql.java.xml.dom.XMLNode" visibility="public">
-                <parameter type="java.lang.String"/>
+                <parameter type="org.w3c.dom.Node"/>
             </constructor>
-            <method name="getIntAttribute" return-type="int" visibility="public">
-                <parameter type="java.lang.String"/>
-            </method>
-            <method name="extractChildren" return-type="void" visibility="private"/>
-            <method name="getchild" return-type="XMLNode" visibility="public">
-                <parameter type="java.lang.String"/>
-            </method>
             <method name="getName" return-type="String" visibility="public"/>
             <method name="getValue" return-type="String" visibility="public"/>
             <method name="isNamed" return-type="boolean" visibility="public">
@@ -67,6 +60,13 @@
                 <parameter type="org.w3c.dom.Node"/>
             </method>
             <method name="getChildren" return-type="XMLNode[]" visibility="public"/>
+            <method name="getIntAttribute" return-type="int" visibility="public">
+                <parameter type="java.lang.String"/>
+            </method>
+            <method name="extractChildren" return-type="void" visibility="private"/>
+            <method name="getchild" return-type="XMLNode" visibility="public">
+                <parameter type="java.lang.String"/>
+            </method>
         </class>
         <class id="org.mql.java.xml.dom.XMLNodeProf">
             <name>XMLNodeProf</name>
@@ -78,10 +78,6 @@
             <constructor name="org.mql.java.xml.dom.XMLNodeProf" visibility="public">
                 <parameter type="org.w3c.dom.Node"/>
             </constructor>
-            <method name="getIntAttribute" return-type="int" visibility="public">
-                <parameter type="java.lang.String"/>
-            </method>
-            <method name="extractChildren" return-type="void" visibility="private"/>
             <method name="getName" return-type="String" visibility="public"/>
             <method name="getValue" return-type="String" visibility="public"/>
             <method name="isNamed" return-type="boolean" visibility="public">
@@ -98,6 +94,10 @@
                 <parameter type="java.lang.String"/>
             </method>
             <method name="getChildren" return-type="XMLNodeProf[]" visibility="public"/>
+            <method name="getIntAttribute" return-type="int" visibility="public">
+                <parameter type="java.lang.String"/>
+            </method>
+            <method name="extractChildren" return-type="void" visibility="private"/>
         </class>
     </package>
     <package name="org.mql.java.xml.models">
@@ -116,6 +116,13 @@
                 <parameter type="java.lang.String"/>
                 <parameter type="java.lang.String"/>
             </constructor>
+            <method name="getName" return-type="String" visibility="public"/>
+            <method name="toString" return-type="String" visibility="public"/>
+            <method name="setName" return-type="void" visibility="public">
+                <parameter type="java.lang.String"/>
+            </method>
+            <method name="getId" return-type="int" visibility="public"/>
+            <method name="getCountry" return-type="String" visibility="public"/>
             <method name="getTechnology" return-type="String" visibility="public"/>
             <method name="getBirthday" return-type="Date" visibility="public"/>
             <method name="setBirthday" return-type="void" visibility="public">
@@ -130,13 +137,6 @@
             <method name="setCountry" return-type="void" visibility="public">
                 <parameter type="java.lang.String"/>
             </method>
-            <method name="getName" return-type="String" visibility="public"/>
-            <method name="toString" return-type="String" visibility="public"/>
-            <method name="setName" return-type="void" visibility="public">
-                <parameter type="java.lang.String"/>
-            </method>
-            <method name="getId" return-type="int" visibility="public"/>
-            <method name="getCountry" return-type="String" visibility="public"/>
         </class>
         <class id="org.mql.java.xml.models.Child">
             <name>Child</name>
@@ -158,9 +158,6 @@
                 <parameter type="int"/>
                 <parameter type="int"/>
             </constructor>
-            <method name="setDay" return-type="void" visibility="public">
-                <parameter type="int"/>
-            </method>
             <method name="toString" return-type="String" visibility="public"/>
             <method name="getYear" return-type="int" visibility="public"/>
             <method name="getMonth" return-type="int" visibility="public"/>
@@ -171,6 +168,9 @@
                 <parameter type="int"/>
             </method>
             <method name="getDay" return-type="int" visibility="public"/>
+            <method name="setDay" return-type="void" visibility="public">
+                <parameter type="int"/>
+            </method>
         </class>
         <class id="org.mql.java.xml.models.Parent">
             <name>Parent</name>
@@ -185,11 +185,16 @@
             <field name="matricule" type="java.lang.String" visibility="private"/>
             <field name="age" type="int" visibility="private"/>
             <constructor name="org.mql.java.xml.models.Test" visibility="public"/>
-            <method name="getMatricule" return-type="String" visibility="public"/>
-            <method name="setMatricule" return-type="void" visibility="public">
+            <method name="getName" return-type="String" visibility="public"/>
+            <method name="setName" return-type="void" visibility="public">
                 <parameter type="java.lang.String"/>
             </method>
+            <method name="getId" return-type="int" visibility="public"/>
             <method name="setSchoolName" return-type="void" visibility="public">
+                <parameter type="java.lang.String"/>
+            </method>
+            <method name="getMatricule" return-type="String" visibility="public"/>
+            <method name="setMatricule" return-type="void" visibility="public">
                 <parameter type="java.lang.String"/>
             </method>
             <method name="getSchoolName" return-type="String" visibility="public"/>
@@ -200,11 +205,6 @@
                 <parameter type="int"/>
             </method>
             <method name="getAge" return-type="int" visibility="public"/>
-            <method name="getName" return-type="String" visibility="public"/>
-            <method name="setName" return-type="void" visibility="public">
-                <parameter type="java.lang.String"/>
-            </method>
-            <method name="getId" return-type="int" visibility="public"/>
         </class>
         <class id="org.mql.java.xml.models.Test2">
             <name>Test2</name>
@@ -214,11 +214,16 @@
             <field name="matricule" type="java.lang.String" visibility="private"/>
             <field name="age" type="int" visibility="private"/>
             <constructor name="org.mql.java.xml.models.Test2" visibility="public"/>
-            <method name="getMatricule" return-type="String" visibility="public"/>
-            <method name="setMatricule" return-type="void" visibility="public">
+            <method name="getName" return-type="String" visibility="public"/>
+            <method name="setName" return-type="void" visibility="public">
                 <parameter type="java.lang.String"/>
             </method>
+            <method name="getId" return-type="int" visibility="public"/>
             <method name="setSchoolName" return-type="void" visibility="public">
+                <parameter type="java.lang.String"/>
+            </method>
+            <method name="getMatricule" return-type="String" visibility="public"/>
+            <method name="setMatricule" return-type="void" visibility="public">
                 <parameter type="java.lang.String"/>
             </method>
             <method name="getSchoolName" return-type="String" visibility="public"/>
@@ -229,11 +234,6 @@
                 <parameter type="int"/>
             </method>
             <method name="getAge" return-type="int" visibility="public"/>
-            <method name="getName" return-type="String" visibility="public"/>
-            <method name="setName" return-type="void" visibility="public">
-                <parameter type="java.lang.String"/>
-            </method>
-            <method name="getId" return-type="int" visibility="public"/>
         </class>
         <class id="org.mql.java.xml.models.Test3">
             <name>Test3</name>
@@ -243,11 +243,16 @@
             <field name="matricule" type="java.lang.String" visibility="private"/>
             <field name="age" type="int" visibility="private"/>
             <constructor name="org.mql.java.xml.models.Test3" visibility="public"/>
-            <method name="getMatricule" return-type="String" visibility="public"/>
-            <method name="setMatricule" return-type="void" visibility="public">
+            <method name="getName" return-type="String" visibility="public"/>
+            <method name="setName" return-type="void" visibility="public">
                 <parameter type="java.lang.String"/>
             </method>
+            <method name="getId" return-type="int" visibility="public"/>
             <method name="setSchoolName" return-type="void" visibility="public">
+                <parameter type="java.lang.String"/>
+            </method>
+            <method name="getMatricule" return-type="String" visibility="public"/>
+            <method name="setMatricule" return-type="void" visibility="public">
                 <parameter type="java.lang.String"/>
             </method>
             <method name="getSchoolName" return-type="String" visibility="public"/>
@@ -258,11 +263,6 @@
                 <parameter type="int"/>
             </method>
             <method name="getAge" return-type="int" visibility="public"/>
-            <method name="getName" return-type="String" visibility="public"/>
-            <method name="setName" return-type="void" visibility="public">
-                <parameter type="java.lang.String"/>
-            </method>
-            <method name="getId" return-type="int" visibility="public"/>
         </class>
         <interface id="org.mql.java.xml.models.Hello">
             <name>Hello</name>
@@ -276,13 +276,13 @@
             <name>FormHandler</name>
             <constructor name="org.mql.java.xml.sax.FormHandler" visibility="public"/>
             <method name="endDocument" return-type="void" visibility="public"/>
+            <method name="startDocument" return-type="void" visibility="public"/>
             <method name="startElement" return-type="void" visibility="public">
                 <parameter type="java.lang.String"/>
                 <parameter type="java.lang.String"/>
                 <parameter type="java.lang.String"/>
                 <parameter type="org.xml.sax.Attributes"/>
             </method>
-            <method name="startDocument" return-type="void" visibility="public"/>
             <method name="endElement" return-type="void" visibility="public">
                 <parameter type="java.lang.String"/>
                 <parameter type="java.lang.String"/>
@@ -299,6 +299,9 @@
             <field name="chpanel" type="org.mql.java.xml.ui.ChoicePanel" visibility="private"/>
             <field name="btPanel" type="org.mql.java.xml.ui.ButtonPanel" visibility="private"/>
             <constructor name="org.mql.java.xml.sax.FormParser" visibility="public"/>
+            <method name="parse" return-type="Form" visibility="public">
+                <parameter type="java.lang.String"/>
+            </method>
             <method name="characters" return-type="void" visibility="public">
                 <parameter type="[C"/>
                 <parameter type="int"/>
@@ -313,9 +316,6 @@
             <method name="endElement" return-type="void" visibility="public">
                 <parameter type="java.lang.String"/>
                 <parameter type="java.lang.String"/>
-                <parameter type="java.lang.String"/>
-            </method>
-            <method name="parse" return-type="Form" visibility="public">
                 <parameter type="java.lang.String"/>
             </method>
         </class>
@@ -338,6 +338,9 @@
             <field name="check" type="org.mql.java.xml.ui.ChoicePanel" visibility="public"/>
             <field name="btns" type="org.mql.java.xml.ui.ButtonPanel" visibility="public"/>
             <constructor name="org.mql.java.xml.sax.FormParser2" visibility="public"/>
+            <method name="parse" return-type="Form" visibility="public">
+                <parameter type="java.lang.String"/>
+            </method>
             <method name="characters" return-type="void" visibility="public">
                 <parameter type="[C"/>
                 <parameter type="int"/>
@@ -352,9 +355,6 @@
             <method name="endElement" return-type="void" visibility="public">
                 <parameter type="java.lang.String"/>
                 <parameter type="java.lang.String"/>
-                <parameter type="java.lang.String"/>
-            </method>
-            <method name="parse" return-type="Form" visibility="public">
                 <parameter type="java.lang.String"/>
             </method>
         </class>
@@ -369,6 +369,9 @@
             <field name="attr" type="java.lang.String" visibility="private"/>
             <field name="label" type="java.lang.String" visibility="private"/>
             <constructor name="org.mql.java.xml.sax.FormParserMe" visibility="public"/>
+            <method name="parse" return-type="Form" visibility="public">
+                <parameter type="java.lang.String"/>
+            </method>
             <method name="characters" return-type="void" visibility="public">
                 <parameter type="[C"/>
                 <parameter type="int"/>
@@ -383,9 +386,6 @@
             <method name="endElement" return-type="void" visibility="public">
                 <parameter type="java.lang.String"/>
                 <parameter type="java.lang.String"/>
-                <parameter type="java.lang.String"/>
-            </method>
-            <method name="parse" return-type="Form" visibility="public">
                 <parameter type="java.lang.String"/>
             </method>
         </class>
@@ -442,4 +442,74 @@
             </constructor>
         </class>
     </package>
+    <relations>
+        <relation type="aggregation">
+            <source>org.mql.java.xml.models.Author</source>
+            <target>org.mql.java.xml.models.Date</target>
+        </relation>
+        <relation type="composition">
+            <source>org.mql.java.xml.models.Author</source>
+            <target>org.mql.java.xml.models.Test</target>
+        </relation>
+        <relation type="realization">
+            <source>org.mql.java.xml.models.Child</source>
+            <target>org.mql.java.xml.models.Hello</target>
+        </relation>
+        <relation type="realization">
+            <source>org.mql.java.xml.models.Child</source>
+            <target>org.mql.java.xml.models.Hello2</target>
+        </relation>
+        <relation type="realization">
+            <source>org.mql.java.xml.models.Child</source>
+            <target>java.io.Serializable</target>
+        </relation>
+        <relation type="aggregation">
+            <source>org.mql.java.xml.models.Child</source>
+            <target>org.mql.java.xml.models.Parent</target>
+        </relation>
+        <relation type="aggregation">
+            <source>org.mql.java.xml.models.Parent</source>
+            <target>org.mql.java.xml.models.Child</target>
+        </relation>
+        <relation type="association">
+            <source>org.mql.java.xml.sax.FormParser</source>
+            <target>org.mql.java.xml.ui.ButtonPanel</target>
+        </relation>
+        <relation type="association">
+            <source>org.mql.java.xml.sax.FormParser</source>
+            <target>org.mql.java.xml.ui.ChoicePanel</target>
+        </relation>
+        <relation type="association">
+            <source>org.mql.java.xml.sax.FormParser</source>
+            <target>org.mql.java.xml.ui.Form</target>
+        </relation>
+        <relation type="association">
+            <source>org.mql.java.xml.sax.FormParser2</source>
+            <target>org.mql.java.xml.ui.ButtonPanel</target>
+        </relation>
+        <relation type="association">
+            <source>org.mql.java.xml.sax.FormParser2</source>
+            <target>org.mql.java.xml.ui.ChoicePanel</target>
+        </relation>
+        <relation type="association">
+            <source>org.mql.java.xml.sax.FormParser2</source>
+            <target>org.mql.java.xml.ui.Form</target>
+        </relation>
+        <relation type="generalization">
+            <source>org.mql.java.xml.sax.FormParserMe</source>
+            <target>org.mql.java.xml.sax.FormHandler</target>
+        </relation>
+        <relation type="association">
+            <source>org.mql.java.xml.sax.FormParserMe</source>
+            <target>org.mql.java.xml.ui.ButtonPanel</target>
+        </relation>
+        <relation type="association">
+            <source>org.mql.java.xml.sax.FormParserMe</source>
+            <target>org.mql.java.xml.ui.ChoicePanel</target>
+        </relation>
+        <relation type="association">
+            <source>org.mql.java.xml.sax.FormParserMe</source>
+            <target>org.mql.java.xml.ui.Form</target>
+        </relation>
+    </relations>
 </project>
