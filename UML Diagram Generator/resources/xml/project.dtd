@@ -1,0 +1,36 @@
+<!ELEMENT project (name,package*,relations?)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT package (class*,annotation*,interface*,enumeration*)>
+<!ELEMENT relations (relation+)>
+<!ELEMENT class (name,field*,constructor*,method*,relation*)>
+<!ELEMENT annotation (name,method*)>
+<!ELEMENT interface (name,field*,method*)>
+<!ELEMENT enumeration (name,constant*)>
+<!ELEMENT field EMPTY>
+<!ELEMENT constructor (parameter*)>
+<!ELEMENT method (parameter*)>
+<!ELEMENT constant EMPTY>
+<!-- <!ELEMENT relation (source,target)> -->
+<!ELEMENT relation (target)>
+<!ELEMENT source (#PCDATA)>
+<!ELEMENT target (#PCDATA)>
+<!ELEMENT parameter EMPTY>
+
+<!ATTLIST project path CDATA #REQUIRED>
+<!ATTLIST package name ID #REQUIRED>
+<!ATTLIST class id ID #REQUIRED>
+<!ATTLIST annotation id ID #REQUIRED>
+<!ATTLIST interface id ID #REQUIRED>
+<!ATTLIST enumeration id ID #REQUIRED>
+
+<!ATTLIST field name CDATA #REQUIRED
+				type CDATA #REQUIRED
+				visibility CDATA #REQUIRED>
+<!ATTLIST constructor name CDATA #REQUIRED
+				visibility CDATA #REQUIRED>
+<!ATTLIST method name CDATA #REQUIRED
+				return-type CDATA #REQUIRED
+				visibility CDATA #REQUIRED>
+<!ATTLIST parameter type CDATA #REQUIRED>
+<!ATTLIST relation type CDATA #REQUIRED>
+				
