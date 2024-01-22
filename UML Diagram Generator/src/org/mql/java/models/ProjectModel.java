@@ -2,6 +2,7 @@ package org.mql.java.models;
 
 import java.io.File;
 import java.util.List;
+import java.util.Vector;
 
 import org.mql.java.enumerations.BaseModelType;
 
@@ -20,6 +21,7 @@ public class ProjectModel implements BaseModel {
 				this.absolutePath = file.getAbsolutePath();
 			}
 			setName();
+			relations = new Vector<>();
 		} else {
 			System.out.println("wrong path!");
 		}
@@ -68,6 +70,12 @@ public class ProjectModel implements BaseModel {
 		this.relations = relations;
 	}
 	
+	
+	
+	public boolean add(RelationModel e) { // delegate method
+		return relations.add(e);
+	}
+
 	public BaseModelType getModelType() {
 		return BaseModelType.PROJECT;
 	}

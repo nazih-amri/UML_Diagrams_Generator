@@ -3,6 +3,8 @@ package org.mql.java.helpers;
 import static org.mql.java.enumerations.RelationType.AGGREGATION;
 import static org.mql.java.enumerations.RelationType.ASSOCIATION;
 import static org.mql.java.enumerations.RelationType.COMPOSITION;
+import static org.mql.java.enumerations.RelationType.GENERALIZATION;
+import static org.mql.java.enumerations.RelationType.REALIZATION;
 
 import java.io.File;
 import java.lang.reflect.Parameter;
@@ -10,8 +12,10 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Vector;
 
+import org.mql.java.enumerations.RelationType;
 import org.mql.java.models.ClassModel;
 import org.mql.java.models.ConstructorModel;
 import org.mql.java.models.FieldModel;
@@ -121,6 +125,12 @@ public class ExplorerHelper {
         }
 		return null;
     }
+    
+	public static RelationType getRelationType(String name) {
+		Map<String, RelationType> relationTypeMap = Map.of("realization", REALIZATION, "generalization", GENERALIZATION,
+				"aggregation", AGGREGATION, "composition", COMPOSITION, "association", ASSOCIATION);
+		return relationTypeMap.get(name);
+	}
 	
 	
 
