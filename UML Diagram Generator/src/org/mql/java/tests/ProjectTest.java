@@ -13,21 +13,21 @@ class ProjectTest {
 	@Test
 	void testProjectNotNull() {
 		ProjectExplorer projectExplorer = new ProjectExplorer(file);
-		ProjectModel project = projectExplorer.parse();
+		ProjectModel project = projectExplorer.getProject();
 		assertTrue(project!=null);
 	}
 	
 	@Test
 	void testProjectPackagesNotNull() {
 		ProjectExplorer projectExplorer = new ProjectExplorer(file);
-		ProjectModel project = projectExplorer.parse();
+		ProjectModel project = projectExplorer.getProject();
 		assertTrue(project.getPackages().size()>0);
 	}
 	
 	@Test
 	void testProjectName() {
 		ProjectExplorer projectExplorer = new ProjectExplorer(file);
-		ProjectModel project = projectExplorer.parse();
+		ProjectModel project = projectExplorer.getProject();
 		assertEquals("UML Diagram Generator",project.getName());
 	}
 	
@@ -41,7 +41,7 @@ class ProjectTest {
 	@Test
 	void testPackages() {
 		ProjectExplorer projectExplorer = new ProjectExplorer(new File("C:\\Users\\na-zi\\OneDrive\\Bureau\\MQL_NAZIH_AMRI\\S1\\JAVA\\p04-XML-Parsers"));
-		ProjectModel project = projectExplorer.parse();
+		ProjectModel project = projectExplorer.getProject();
 		assertEquals("p04-XML-Parsers",project.getName());
 		assertEquals("org.mql.java.xml", project.getPackages().get(0).getName());
 		assertEquals("ANNOTATION", project.getPackages().get(0).getAnnotations().get(0).getModelType().name());
@@ -50,7 +50,7 @@ class ProjectTest {
 	@Test
 	void testClasses() {
 		ProjectExplorer projectExplorer = new ProjectExplorer(new File("C:\\Users\\na-zi\\OneDrive\\Bureau\\MQL_NAZIH_AMRI\\S1\\JAVA\\p04-XML-Parsers"));
-		ProjectModel project = projectExplorer.parse();
+		ProjectModel project = projectExplorer.getProject();
 		assertEquals("p04-XML-Parsers",project.getName());
 		assertEquals("org.mql.java.xml", project.getPackages().get(0).getName());
 		assertEquals("CLASS", project.getPackages().get(0).getClasses().get(0).getModelType().name());

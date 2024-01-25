@@ -29,7 +29,7 @@ public class ProjectExplorer {
 		this.projectClasses = new Vector<>();
 	}
 
-	public ProjectModel parse() {
+	public ProjectModel getProject() {
 		if (project != null) {
 			loadPackages();
 			loadModels();

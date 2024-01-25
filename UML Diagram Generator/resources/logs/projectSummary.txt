@@ -3,12 +3,12 @@
 ### Class : Examples
 ### constructor : public org.mql.java.xml.Examples
 ### method : public static void main
-### method : public void exp01
 ### method : public void exp5
 ### method : public void exp02
 ### method : public void exp3
 ### method : public void exp4
 ### method : public void exp6
+### method : public void exp01
 ### Interface : Inter1
 ### flied : public static final java.lang.String NAME
 ### method : public abstract String getName
@@ -37,9 +37,9 @@
 ### method : public String getAttribute
 ### method : public void setNode
 ### method : public XMLNode[] getChildren
+### method : public int getIntAttribute
 ### method : public XMLNode getchild
 ### method : private void extractChildren
-### method : public int getIntAttribute
 ### Class : XMLNodeProf
 ### flied : private org.w3c.dom.Node node
 ### flied : private org.mql.java.xml.dom.XMLNodeProf[] children
@@ -53,8 +53,8 @@
 ### method : public void setNode
 ### method : public XMLNodeProf getChild
 ### method : public XMLNodeProf[] getChildren
-### method : private void extractChildren
 ### method : public int getIntAttribute
+### method : private void extractChildren
 ### Package : org.mql.java.xml.models
 ### Class : Author
 ### flied : private static final org.mql.java.xml.models.Test test
@@ -73,8 +73,8 @@
 ### method : public void setId
 ### method : public void setCountry
 ### method : public Date getBirthday
-### method : public void setBirthday
 ### method : public void setTechnology
+### method : public void setBirthday
 ### Relation : org.mql.java.xml.models.Author -- AGGREGATION -- org.mql.java.xml.models.Date
 ### Relation : org.mql.java.xml.models.Author -- COMPOSITION -- org.mql.java.xml.models.Test
 ### Class : Child
@@ -82,10 +82,10 @@
 ### flied : private org.mql.java.xml.models.Parent parent
 ### constructor : public org.mql.java.xml.models.Child
 ### method : public void hello
-### method : public void iamMethod
-### method : public void hello2
-### method : public void iamMethod2
 ### method : public void iamMethod3
+### method : public void iamMethod
+### method : public void iamMethod2
+### method : public void hello2
 ### Relation : org.mql.java.xml.models.Child -- REALIZATION -- org.mql.java.xml.models.Hello
 ### Relation : org.mql.java.xml.models.Child -- REALIZATION -- org.mql.java.xml.models.Hello2
 ### Relation : org.mql.java.xml.models.Child -- REALIZATION -- java.io.Serializable
@@ -117,12 +117,12 @@
 ### method : public String getName
 ### method : public void setName
 ### method : public int getId
-### method : public int getAge
-### method : public void setAge
 ### method : public void setId
-### method : public String getSchoolName
+### method : public void setAge
+### method : public int getAge
 ### method : public void setSchoolName
 ### method : public void setMatricule
+### method : public String getSchoolName
 ### method : public String getMatricule
 ### Class : Test2
 ### flied : private int id
@@ -134,12 +134,12 @@
 ### method : public String getName
 ### method : public void setName
 ### method : public int getId
-### method : public int getAge
-### method : public void setAge
 ### method : public void setId
-### method : public String getSchoolName
+### method : public void setAge
+### method : public int getAge
 ### method : public void setSchoolName
 ### method : public void setMatricule
+### method : public String getSchoolName
 ### method : public String getMatricule
 ### Class : Test3
 ### flied : private int id
@@ -151,18 +151,18 @@
 ### method : public String getName
 ### method : public void setName
 ### method : public int getId
-### method : public int getAge
-### method : public void setAge
 ### method : public void setId
-### method : public String getSchoolName
+### method : public void setAge
+### method : public int getAge
 ### method : public void setSchoolName
 ### method : public void setMatricule
+### method : public String getSchoolName
 ### method : public String getMatricule
 ### Interface : Hello
 ### flied : public static final int FINALFIELD
+### method : public abstract void iamMethod3
 ### method : public abstract void iamMethod
 ### method : public abstract void iamMethod2
-### method : public abstract void iamMethod3
 ### Interface : Hello2
 ### method : public abstract void hello
 ### method : public abstract void hello2
