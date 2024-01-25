@@ -5,6 +5,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import java.util.Vector;
 import java.util.stream.Collectors;
 
@@ -67,5 +68,9 @@ public class ParserHelper {
 		}
 		return interfaces;
 	}
+	
+    public static String generateXmiId() {
+        return "_" + UUID.randomUUID().toString().substring(0,8);
+    }
 
 }

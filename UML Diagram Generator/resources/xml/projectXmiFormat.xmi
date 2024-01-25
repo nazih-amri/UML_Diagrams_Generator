@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.omg.org/UML/2001">
+    <uml:Model name="p04-XML-Parsers"/>
+    <packagedElement name="org.mql.java.xml" xmi:id="_ad412a2e" xmi:type="uml:Package">
+        <packagedElement name="Examples" xmi:id="_0baa7233" xmi:type="uml:Class">
+            <ownedOperation name="org.mql.java.xml.Examples" visibility="public" xmi:id="_a7d72a5e" xmi:type="uml:Operation"/>
+            <ownedOperation name="main" visibility="public static" xmi:id="_4dda4c68" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="[Ljava.lang.String;" xmi:id="_e26a9af2" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="exp01" visibility="public" xmi:id="_549aed6f" xmi:type="uml:Operation"/>
+            <ownedOperation name="exp5" visibility="public" xmi:id="_ce9c97bb" xmi:type="uml:Operation"/>
+            <ownedOperation name="exp02" visibility="public" xmi:id="_79b3c09b" xmi:type="uml:Operation"/>
+            <ownedOperation name="exp3" visibility="public" xmi:id="_87e217dc" xmi:type="uml:Operation"/>
+            <ownedOperation name="exp4" visibility="public" xmi:id="_dbd1e7a6" xmi:type="uml:Operation"/>
+            <ownedOperation name="exp6" visibility="public" xmi:id="_a1db4105" xmi:type="uml:Operation"/>
+        </packagedElement>
+        <packagedElement name="Annot1" xmi:id="_71c3dc6a" xmi:type="uml:Annotation">
+            <ownedOperation name="name" visibility="public abstract" xmi:id="_43e33f41" xmi:type="uml:Operation"/>
+        </packagedElement>
+        <packagedElement name="Annotationn" xmi:id="_27972d86" xmi:type="uml:Annotation">
+            <ownedOperation name="order" visibility="public abstract" xmi:id="_e2b0b7a3" xmi:type="uml:Operation"/>
+        </packagedElement>
+        <packagedElement name="Inter1" xmi:id="_b91ad26c" xmi:type="uml:Interface">
+            <ownedAttribute name="NAME" type="java.lang.String" visibility="public static final" xmi:id="_35b6db8f" xmi:type="uml:Property"/>
+            <ownedOperation name="getName" visibility="public abstract" xmi:id="_fbb4fb44" xmi:type="uml:Operation"/>
+            <ownedOperation name="setName" visibility="public abstract" xmi:id="_f0bb8782" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_f880f45a" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+        </packagedElement>
+        <packagedElement name="enum1" xmi:id="_d6aeeb7d" xmi:type="uml:Enumeration">
+            <ownedLiteral name="CONSTANT1" xmi:type="uml:EnumerationLiteral"/>
+            <ownedLiteral name="CONSTANT2" xmi:type="uml:EnumerationLiteral"/>
+            <ownedLiteral name="CONSTANT3" xmi:type="uml:EnumerationLiteral"/>
+        </packagedElement>
+    </packagedElement>
+    <packagedElement name="org.mql.java.xml.dom" xmi:id="_ecdb9804" xmi:type="uml:Package">
+        <packagedElement name="AuthorsParser" xmi:id="_ed71a533" xmi:type="uml:Class">
+            <ownedOperation name="org.mql.java.xml.dom.AuthorsParser" visibility="public" xmi:id="_6b70971e" xmi:type="uml:Operation"/>
+            <ownedOperation name="parse" visibility="public" xmi:id="_6d59af4e" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_a35b0124" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+        </packagedElement>
+        <packagedElement name="XMLNode" xmi:id="_e51122c8" xmi:type="uml:Class">
+            <ownedAttribute name="node" type="org.w3c.dom.Node" visibility="private" xmi:id="_77294ceb" xmi:type="uml:Property"/>
+            <ownedAttribute name="children" type="org.mql.java.xml.dom.XMLNode[]" visibility="private" xmi:id="_0efa042b" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.dom.XMLNode" visibility="public" xmi:id="_58271618" xmi:type="uml:Operation">
+                <parameter type="java.lang.String"/>
+            </ownedOperation>
+            <ownedOperation name="org.mql.java.xml.dom.XMLNode" visibility="public" xmi:id="_b0293f4e" xmi:type="uml:Operation">
+                <parameter type="org.w3c.dom.Node"/>
+            </ownedOperation>
+            <ownedOperation name="getName" visibility="public" xmi:id="_b915d7c8" xmi:type="uml:Operation"/>
+            <ownedOperation name="getValue" visibility="public" xmi:id="_a6ef88e5" xmi:type="uml:Operation"/>
+            <ownedOperation name="isNamed" visibility="public" xmi:id="_a21f2b8d" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_9d6d7c7f" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getNode" visibility="public" xmi:id="_db58be43" xmi:type="uml:Operation"/>
+            <ownedOperation name="getAttribute" visibility="public" xmi:id="_699d2226" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_f21f1f22" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="setNode" visibility="public" xmi:id="_ba1e0219" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="org.w3c.dom.Node" xmi:id="_8d88d777" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getChildren" visibility="public" xmi:id="_a322d15a" xmi:type="uml:Operation"/>
+            <ownedOperation name="getchild" visibility="public" xmi:id="_522464a3" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_71c5f67c" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="extractChildren" visibility="private" xmi:id="_994a5f3d" xmi:type="uml:Operation"/>
+            <ownedOperation name="getIntAttribute" visibility="public" xmi:id="_d4c22f80" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_6ff71c67" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+        </packagedElement>
+        <packagedElement name="XMLNodeProf" xmi:id="_fe9b2be9" xmi:type="uml:Class">
+            <ownedAttribute name="node" type="org.w3c.dom.Node" visibility="private" xmi:id="_2c668c5e" xmi:type="uml:Property"/>
+            <ownedAttribute name="children" type="org.mql.java.xml.dom.XMLNodeProf[]" visibility="private" xmi:id="_43d73475" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.dom.XMLNodeProf" visibility="public" xmi:id="_8d816aa5" xmi:type="uml:Operation">
+                <parameter type="java.lang.String"/>
+            </ownedOperation>
+            <ownedOperation name="org.mql.java.xml.dom.XMLNodeProf" visibility="public" xmi:id="_94aeace7" xmi:type="uml:Operation">
+                <parameter type="org.w3c.dom.Node"/>
+            </ownedOperation>
+            <ownedOperation name="getName" visibility="public" xmi:id="_44bbf165" xmi:type="uml:Operation"/>
+            <ownedOperation name="getValue" visibility="public" xmi:id="_94a10a87" xmi:type="uml:Operation"/>
+            <ownedOperation name="isNamed" visibility="public" xmi:id="_5b9c9e7e" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_49d69cbe" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getNode" visibility="public" xmi:id="_de4afd68" xmi:type="uml:Operation"/>
+            <ownedOperation name="getAttribute" visibility="public" xmi:id="_441606a9" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_f0885218" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="setNode" visibility="public" xmi:id="_ed6fab3d" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="org.w3c.dom.Node" xmi:id="_9a9b617d" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getChild" visibility="public" xmi:id="_0c055c44" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_6ba5a72f" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getChildren" visibility="public" xmi:id="_ab700bc7" xmi:type="uml:Operation"/>
+            <ownedOperation name="extractChildren" visibility="private" xmi:id="_15566a81" xmi:type="uml:Operation"/>
+            <ownedOperation name="getIntAttribute" visibility="public" xmi:id="_867b83c8" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_7d1327cb" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+        </packagedElement>
+    </packagedElement>
+    <packagedElement name="org.mql.java.xml.models" xmi:id="_3107e623" xmi:type="uml:Package">
+        <packagedElement name="Author" xmi:id="_258fc95a" xmi:type="uml:Class">
+            <ownedAttribute name="test" type="org.mql.java.xml.models.Test" visibility="private static final" xmi:id="_55cf0264" xmi:type="uml:Property"/>
+            <ownedAttribute name="id" type="int" visibility="private" xmi:id="_8eadf347" xmi:type="uml:Property"/>
+            <ownedAttribute name="name" type="java.lang.String" visibility="private" xmi:id="_f937969a" xmi:type="uml:Property"/>
+            <ownedAttribute name="birthday" type="org.mql.java.xml.models.Date" visibility="private" xmi:id="_f01ab323" xmi:type="uml:Property"/>
+            <ownedAttribute name="country" type="java.lang.String" visibility="private" xmi:id="_491e197d" xmi:type="uml:Property"/>
+            <ownedAttribute name="technology" type="java.lang.String" visibility="private" xmi:id="_1c3cb81e" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.models.Author" visibility="public" xmi:id="_62baddf8" xmi:type="uml:Operation">
+                <parameter type="int"/>
+                <parameter type="java.lang.String"/>
+                <parameter type="org.mql.java.xml.models.Date"/>
+                <parameter type="java.lang.String"/>
+                <parameter type="java.lang.String"/>
+            </ownedOperation>
+            <ownedOperation name="getName" visibility="public" xmi:id="_0a5b7483" xmi:type="uml:Operation"/>
+            <ownedOperation name="toString" visibility="public" xmi:id="_2461b489" xmi:type="uml:Operation"/>
+            <ownedOperation name="setName" visibility="public" xmi:id="_4618a769" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_f3f114ba" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getId" visibility="public" xmi:id="_be767cc7" xmi:type="uml:Operation"/>
+            <ownedOperation name="getCountry" visibility="public" xmi:id="_31eacad2" xmi:type="uml:Operation"/>
+            <ownedOperation name="getTechnology" visibility="public" xmi:id="_0ed44606" xmi:type="uml:Operation"/>
+            <ownedOperation name="setId" visibility="public" xmi:id="_60db0ab8" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="int" xmi:id="_70801f56" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="setCountry" visibility="public" xmi:id="_d2dccc2f" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_8cec5380" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getBirthday" visibility="public" xmi:id="_24328075" xmi:type="uml:Operation"/>
+            <ownedOperation name="setBirthday" visibility="public" xmi:id="_06274c9f" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="org.mql.java.xml.models.Date" xmi:id="_392a1e7c" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="setTechnology" visibility="public" xmi:id="_03f4ba4f" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_307a38bc" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <packagedElement target="org.mql.java.xml.models.Date" xmi:id="_e4259ab9" xmi:type="uml:AGGREGATION"/>
+            <packagedElement target="org.mql.java.xml.models.Test" xmi:id="_9992e1cb" xmi:type="uml:COMPOSITION"/>
+        </packagedElement>
+        <packagedElement name="Child" xmi:id="_e7d1e1ec" xmi:type="uml:Class">
+            <ownedAttribute name="name" type="java.lang.String" visibility="private" xmi:id="_57c0fe28" xmi:type="uml:Property"/>
+            <ownedAttribute name="parent" type="org.mql.java.xml.models.Parent" visibility="private" xmi:id="_5f91e7b4" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.models.Child" visibility="public" xmi:id="_15c97176" xmi:type="uml:Operation">
+                <parameter type="org.mql.java.xml.models.Parent"/>
+                <parameter type="java.lang.String"/>
+            </ownedOperation>
+            <ownedOperation name="hello" visibility="public" xmi:id="_40ca7673" xmi:type="uml:Operation"/>
+            <ownedOperation name="iamMethod" visibility="public" xmi:id="_187b7b8d" xmi:type="uml:Operation"/>
+            <ownedOperation name="hello2" visibility="public" xmi:id="_98b1bbfc" xmi:type="uml:Operation"/>
+            <ownedOperation name="iamMethod2" visibility="public" xmi:id="_33ff1ea1" xmi:type="uml:Operation"/>
+            <ownedOperation name="iamMethod3" visibility="public" xmi:id="_9c11ccb5" xmi:type="uml:Operation"/>
+            <packagedElement target="org.mql.java.xml.models.Hello" xmi:id="_931f3e0c" xmi:type="uml:REALIZATION"/>
+            <packagedElement target="org.mql.java.xml.models.Hello2" xmi:id="_f3a7edb8" xmi:type="uml:REALIZATION"/>
+            <packagedElement target="java.io.Serializable" xmi:id="_f77cf081" xmi:type="uml:REALIZATION"/>
+            <packagedElement target="org.mql.java.xml.models.Parent" xmi:id="_4f35596e" xmi:type="uml:AGGREGATION"/>
+        </packagedElement>
+        <packagedElement name="Date" xmi:id="_313a8b4d" xmi:type="uml:Class">
+            <ownedAttribute name="day" type="int" visibility="private" xmi:id="_82d6bc5b" xmi:type="uml:Property"/>
+            <ownedAttribute name="month" type="int" visibility="private" xmi:id="_5ad68685" xmi:type="uml:Property"/>
+            <ownedAttribute name="year" type="int" visibility="private" xmi:id="_3b7e4f71" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.models.Date" visibility="public" xmi:id="_d92ac9d4" xmi:type="uml:Operation"/>
+            <ownedOperation name="org.mql.java.xml.models.Date" visibility="public" xmi:id="_56d2f0d4" xmi:type="uml:Operation">
+                <parameter type="int"/>
+                <parameter type="int"/>
+                <parameter type="int"/>
+            </ownedOperation>
+            <ownedOperation name="toString" visibility="public" xmi:id="_3faae75b" xmi:type="uml:Operation"/>
+            <ownedOperation name="getYear" visibility="public" xmi:id="_417b3c67" xmi:type="uml:Operation"/>
+            <ownedOperation name="getMonth" visibility="public" xmi:id="_13699d45" xmi:type="uml:Operation"/>
+            <ownedOperation name="setMonth" visibility="public" xmi:id="_83e61137" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="int" xmi:id="_f37f59d2" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="setYear" visibility="public" xmi:id="_7782d78f" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="int" xmi:id="_fc1b8d58" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getDay" visibility="public" xmi:id="_024ca5cb" xmi:type="uml:Operation"/>
+            <ownedOperation name="setDay" visibility="public" xmi:id="_f0b9380a" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="int" xmi:id="_17e5ef98" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+        </packagedElement>
+        <packagedElement name="Parent" xmi:id="_28110779" xmi:type="uml:Class">
+            <ownedAttribute name="children" type="java.util.List" visibility="private" xmi:id="_7d7bf466" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.models.Parent" visibility="public" xmi:id="_e688b2cb" xmi:type="uml:Operation"/>
+            <packagedElement target="org.mql.java.xml.models.Child" xmi:id="_d46098b1" xmi:type="uml:AGGREGATION"/>
+        </packagedElement>
+        <packagedElement name="Test" xmi:id="_81e28a3c" xmi:type="uml:Class">
+            <ownedAttribute name="id" type="int" visibility="private" xmi:id="_89da3812" xmi:type="uml:Property"/>
+            <ownedAttribute name="name" type="java.lang.String" visibility="private" xmi:id="_6e30cb1e" xmi:type="uml:Property"/>
+            <ownedAttribute name="schoolName" type="java.lang.String" visibility="private" xmi:id="_58e2c7b3" xmi:type="uml:Property"/>
+            <ownedAttribute name="matricule" type="java.lang.String" visibility="private" xmi:id="_e9a9734c" xmi:type="uml:Property"/>
+            <ownedAttribute name="age" type="int" visibility="private" xmi:id="_411e063e" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.models.Test" visibility="public" xmi:id="_0a616c3d" xmi:type="uml:Operation"/>
+            <ownedOperation name="getName" visibility="public" xmi:id="_39a9ebe6" xmi:type="uml:Operation"/>
+            <ownedOperation name="setName" visibility="public" xmi:id="_b876a1cb" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_dfb1b9a0" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getId" visibility="public" xmi:id="_70942e28" xmi:type="uml:Operation"/>
+            <ownedOperation name="getAge" visibility="public" xmi:id="_3ba94be1" xmi:type="uml:Operation"/>
+            <ownedOperation name="setAge" visibility="public" xmi:id="_895ca1fc" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="int" xmi:id="_e56bcbef" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="setId" visibility="public" xmi:id="_0c874b46" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="int" xmi:id="_81b84d79" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getSchoolName" visibility="public" xmi:id="_d9947a95" xmi:type="uml:Operation"/>
+            <ownedOperation name="setSchoolName" visibility="public" xmi:id="_04db9895" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_ed2dc3b9" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="setMatricule" visibility="public" xmi:id="_fb826e4c" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_f6262ecd" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getMatricule" visibility="public" xmi:id="_3e8916c3" xmi:type="uml:Operation"/>
+        </packagedElement>
+        <packagedElement name="Test2" xmi:id="_113e85eb" xmi:type="uml:Class">
+            <ownedAttribute name="id" type="int" visibility="private" xmi:id="_47df6bb7" xmi:type="uml:Property"/>
+            <ownedAttribute name="name" type="java.lang.String" visibility="private" xmi:id="_0036d5d7" xmi:type="uml:Property"/>
+            <ownedAttribute name="schoolName" type="java.lang.String" visibility="private" xmi:id="_e3b195c9" xmi:type="uml:Property"/>
+            <ownedAttribute name="matricule" type="java.lang.String" visibility="private" xmi:id="_c94b317d" xmi:type="uml:Property"/>
+            <ownedAttribute name="age" type="int" visibility="private" xmi:id="_611193b3" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.models.Test2" visibility="public" xmi:id="_f6dd855a" xmi:type="uml:Operation"/>
+            <ownedOperation name="getName" visibility="public" xmi:id="_44795094" xmi:type="uml:Operation"/>
+            <ownedOperation name="setName" visibility="public" xmi:id="_8b9e63f7" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_c96d54d9" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getId" visibility="public" xmi:id="_53e34c8d" xmi:type="uml:Operation"/>
+            <ownedOperation name="getAge" visibility="public" xmi:id="_2a485d2c" xmi:type="uml:Operation"/>
+            <ownedOperation name="setAge" visibility="public" xmi:id="_b6414aa5" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="int" xmi:id="_34563092" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="setId" visibility="public" xmi:id="_0f4dd8da" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="int" xmi:id="_031817a9" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getSchoolName" visibility="public" xmi:id="_97c04a7f" xmi:type="uml:Operation"/>
+            <ownedOperation name="setSchoolName" visibility="public" xmi:id="_75841743" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_b83a76df" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="setMatricule" visibility="public" xmi:id="_2420eaf0" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_1f0acd17" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getMatricule" visibility="public" xmi:id="_25797578" xmi:type="uml:Operation"/>
+        </packagedElement>
+        <packagedElement name="Test3" xmi:id="_b1f75f6d" xmi:type="uml:Class">
+            <ownedAttribute name="id" type="int" visibility="private" xmi:id="_fd73fd9e" xmi:type="uml:Property"/>
+            <ownedAttribute name="name" type="java.lang.String" visibility="private" xmi:id="_c8d953cc" xmi:type="uml:Property"/>
+            <ownedAttribute name="schoolName" type="java.lang.String" visibility="private" xmi:id="_0542227e" xmi:type="uml:Property"/>
+            <ownedAttribute name="matricule" type="java.lang.String" visibility="private" xmi:id="_e88281d3" xmi:type="uml:Property"/>
+            <ownedAttribute name="age" type="int" visibility="private" xmi:id="_13fdfd65" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.models.Test3" visibility="public" xmi:id="_fdc25410" xmi:type="uml:Operation"/>
+            <ownedOperation name="getName" visibility="public" xmi:id="_5d065df7" xmi:type="uml:Operation"/>
+            <ownedOperation name="setName" visibility="public" xmi:id="_9f7d61cd" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_1d54b846" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getId" visibility="public" xmi:id="_2bfe477b" xmi:type="uml:Operation"/>
+            <ownedOperation name="getAge" visibility="public" xmi:id="_c9640ec6" xmi:type="uml:Operation"/>
+            <ownedOperation name="setAge" visibility="public" xmi:id="_760303f9" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="int" xmi:id="_f60b8279" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="setId" visibility="public" xmi:id="_1eee33e3" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="int" xmi:id="_39ba889c" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getSchoolName" visibility="public" xmi:id="_746600d3" xmi:type="uml:Operation"/>
+            <ownedOperation name="setSchoolName" visibility="public" xmi:id="_6a07b0f4" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_65e15d4a" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="setMatricule" visibility="public" xmi:id="_2b36fb9e" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_731ce42f" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="getMatricule" visibility="public" xmi:id="_01d4904e" xmi:type="uml:Operation"/>
+        </packagedElement>
+        <packagedElement name="Hello" xmi:id="_e5187118" xmi:type="uml:Interface">
+            <ownedAttribute name="FINALFIELD" type="int" visibility="public static final" xmi:id="_310a26cb" xmi:type="uml:Property"/>
+            <ownedOperation name="iamMethod" visibility="public abstract" xmi:id="_c27c1502" xmi:type="uml:Operation"/>
+            <ownedOperation name="iamMethod2" visibility="public abstract" xmi:id="_76b6e70a" xmi:type="uml:Operation"/>
+            <ownedOperation name="iamMethod3" visibility="public abstract" xmi:id="_018909ab" xmi:type="uml:Operation"/>
+        </packagedElement>
+        <packagedElement name="Hello2" xmi:id="_81cefadb" xmi:type="uml:Interface">
+            <ownedOperation name="hello" visibility="public abstract" xmi:id="_9cc3dd94" xmi:type="uml:Operation"/>
+            <ownedOperation name="hello2" visibility="public abstract" xmi:id="_37f9c5d1" xmi:type="uml:Operation"/>
+        </packagedElement>
+    </packagedElement>
+    <packagedElement name="org.mql.java.xml.sax" xmi:id="_5841b73d" xmi:type="uml:Package">
+        <packagedElement name="FormHandler" xmi:id="_bab8c506" xmi:type="uml:Class">
+            <ownedOperation name="org.mql.java.xml.sax.FormHandler" visibility="public" xmi:id="_a1c1ae58" xmi:type="uml:Operation"/>
+            <ownedOperation name="endElement" visibility="public" xmi:id="_c97ea1a7" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_66a4d130" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg1" type="java.lang.String" xmi:id="_240be0cf" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg2" type="java.lang.String" xmi:id="_fa09148a" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="startElement" visibility="public" xmi:id="_a6c001f1" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_88d83578" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg1" type="java.lang.String" xmi:id="_3484c6f5" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg2" type="java.lang.String" xmi:id="_ea878f5c" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg3" type="org.xml.sax.Attributes" xmi:id="_1e108908" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="endDocument" visibility="public" xmi:id="_050ef0ee" xmi:type="uml:Operation"/>
+            <ownedOperation name="startDocument" visibility="public" xmi:id="_8d8eb52d" xmi:type="uml:Operation"/>
+        </packagedElement>
+        <packagedElement name="FormParser" xmi:id="_491e99a5" xmi:type="uml:Class">
+            <ownedAttribute name="form" type="org.mql.java.xml.ui.Form" visibility="private" xmi:id="_87bb3079" xmi:type="uml:Property"/>
+            <ownedAttribute name="choice" type="boolean" visibility="private" xmi:id="_2ac51d55" xmi:type="uml:Property"/>
+            <ownedAttribute name="list" type="java.util.List" visibility="private" xmi:id="_d2e1280a" xmi:type="uml:Property"/>
+            <ownedAttribute name="attr" type="java.lang.String" visibility="private" xmi:id="_5a81a85a" xmi:type="uml:Property"/>
+            <ownedAttribute name="label" type="java.lang.String" visibility="private" xmi:id="_fdac4c27" xmi:type="uml:Property"/>
+            <ownedAttribute name="chpanel" type="org.mql.java.xml.ui.ChoicePanel" visibility="private" xmi:id="_162ce3cf" xmi:type="uml:Property"/>
+            <ownedAttribute name="btPanel" type="org.mql.java.xml.ui.ButtonPanel" visibility="private" xmi:id="_2c4a8970" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.sax.FormParser" visibility="public" xmi:id="_4eb2c676" xmi:type="uml:Operation"/>
+            <ownedOperation name="parse" visibility="public" xmi:id="_38f471bb" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_639806bc" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="characters" visibility="public" xmi:id="_33704e5f" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="[C" xmi:id="_7a3fe440" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg1" type="int" xmi:id="_63baa429" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg2" type="int" xmi:id="_dcc4bf2f" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="endElement" visibility="public" xmi:id="_9f53c189" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_c7da2d88" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg1" type="java.lang.String" xmi:id="_bf0fd2e0" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg2" type="java.lang.String" xmi:id="_0fda1b94" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="startElement" visibility="public" xmi:id="_dad5825e" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_dcdef531" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg1" type="java.lang.String" xmi:id="_622020b1" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg2" type="java.lang.String" xmi:id="_412fa042" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg3" type="org.xml.sax.Attributes" xmi:id="_d2dbb467" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <packagedElement target="org.mql.java.xml.ui.ButtonPanel" xmi:id="_2d9b33b9" xmi:type="uml:ASSOCIATION"/>
+            <packagedElement target="org.mql.java.xml.ui.ChoicePanel" xmi:id="_52d2e712" xmi:type="uml:ASSOCIATION"/>
+            <packagedElement target="org.mql.java.xml.ui.Form" xmi:id="_872b4739" xmi:type="uml:ASSOCIATION"/>
+        </packagedElement>
+        <packagedElement name="FormParser2" xmi:id="_6fe5699a" xmi:type="uml:Class">
+            <ownedAttribute name="form" type="org.mql.java.xml.ui.Form" visibility="private" xmi:id="_e1dd0858" xmi:type="uml:Property"/>
+            <ownedAttribute name="radchoice" type="boolean" visibility="private" xmi:id="_8311f8c4" xmi:type="uml:Property"/>
+            <ownedAttribute name="combochoice" type="boolean" visibility="private" xmi:id="_3d5ca361" xmi:type="uml:Property"/>
+            <ownedAttribute name="checkchoice" type="boolean" visibility="private" xmi:id="_3f6bb9e0" xmi:type="uml:Property"/>
+            <ownedAttribute name="btnchoice" type="boolean" visibility="private" xmi:id="_90945a3e" xmi:type="uml:Property"/>
+            <ownedAttribute name="radLabel" type="java.lang.String" visibility="private" xmi:id="_9441f8fd" xmi:type="uml:Property"/>
+            <ownedAttribute name="checkLabel" type="java.lang.String" visibility="private" xmi:id="_0d8d18ab" xmi:type="uml:Property"/>
+            <ownedAttribute name="comboLabel" type="java.lang.String" visibility="private" xmi:id="_82629128" xmi:type="uml:Property"/>
+            <ownedAttribute name="radioChoices" type="java.util.List" visibility="private" xmi:id="_50903ca0" xmi:type="uml:Property"/>
+            <ownedAttribute name="comboChoices" type="java.util.List" visibility="private" xmi:id="_aae53103" xmi:type="uml:Property"/>
+            <ownedAttribute name="checkChoices" type="java.util.List" visibility="private" xmi:id="_42e6866e" xmi:type="uml:Property"/>
+            <ownedAttribute name="buttons" type="java.util.List" visibility="private" xmi:id="_a778c7ee" xmi:type="uml:Property"/>
+            <ownedAttribute name="radio" type="org.mql.java.xml.ui.ChoicePanel" visibility="public" xmi:id="_b6d155f9" xmi:type="uml:Property"/>
+            <ownedAttribute name="combo" type="org.mql.java.xml.ui.ChoicePanel" visibility="public" xmi:id="_64962a16" xmi:type="uml:Property"/>
+            <ownedAttribute name="check" type="org.mql.java.xml.ui.ChoicePanel" visibility="public" xmi:id="_88738b08" xmi:type="uml:Property"/>
+            <ownedAttribute name="btns" type="org.mql.java.xml.ui.ButtonPanel" visibility="public" xmi:id="_09af55b2" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.sax.FormParser2" visibility="public" xmi:id="_f7d94429" xmi:type="uml:Operation"/>
+            <ownedOperation name="parse" visibility="public" xmi:id="_8b4b17fc" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_b35969c5" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="characters" visibility="public" xmi:id="_88aa69a3" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="[C" xmi:id="_2736eb12" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg1" type="int" xmi:id="_fd6a6d67" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg2" type="int" xmi:id="_721c335e" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="endElement" visibility="public" xmi:id="_4d41776a" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_6a1350f5" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg1" type="java.lang.String" xmi:id="_6c614361" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg2" type="java.lang.String" xmi:id="_1b9e58b4" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="startElement" visibility="public" xmi:id="_fde1b603" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_64436fdf" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg1" type="java.lang.String" xmi:id="_0258fb20" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg2" type="java.lang.String" xmi:id="_7ad8d34a" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg3" type="org.xml.sax.Attributes" xmi:id="_9ac4f016" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <packagedElement target="org.mql.java.xml.ui.ButtonPanel" xmi:id="_b697e47e" xmi:type="uml:ASSOCIATION"/>
+            <packagedElement target="org.mql.java.xml.ui.ChoicePanel" xmi:id="_873352ad" xmi:type="uml:ASSOCIATION"/>
+            <packagedElement target="org.mql.java.xml.ui.Form" xmi:id="_640719be" xmi:type="uml:ASSOCIATION"/>
+        </packagedElement>
+        <packagedElement name="FormParserMe" xmi:id="_3b63db3e" xmi:type="uml:Class">
+            <ownedAttribute name="form" type="org.mql.java.xml.ui.Form" visibility="private" xmi:id="_5c7faa21" xmi:type="uml:Property"/>
+            <ownedAttribute name="choicePanel" type="org.mql.java.xml.ui.ChoicePanel" visibility="private" xmi:id="_787f5afa" xmi:type="uml:Property"/>
+            <ownedAttribute name="buttonPanel" type="org.mql.java.xml.ui.ButtonPanel" visibility="private" xmi:id="_e941c964" xmi:type="uml:Property"/>
+            <ownedAttribute name="tag" type="java.lang.String" visibility="private" xmi:id="_201a25b7" xmi:type="uml:Property"/>
+            <ownedAttribute name="isChoice" type="boolean" visibility="private" xmi:id="_7a303658" xmi:type="uml:Property"/>
+            <ownedAttribute name="choices" type="java.util.List" visibility="private" xmi:id="_d0655917" xmi:type="uml:Property"/>
+            <ownedAttribute name="attr" type="java.lang.String" visibility="private" xmi:id="_bbb241a7" xmi:type="uml:Property"/>
+            <ownedAttribute name="label" type="java.lang.String" visibility="private" xmi:id="_747edd65" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.sax.FormParserMe" visibility="public" xmi:id="_c9255b99" xmi:type="uml:Operation"/>
+            <ownedOperation name="parse" visibility="public" xmi:id="_34f1d3e7" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_01aaf5da" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="characters" visibility="public" xmi:id="_2021078b" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="[C" xmi:id="_62f3cdd1" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg1" type="int" xmi:id="_6ac1df69" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg2" type="int" xmi:id="_9c2ef0e7" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="endElement" visibility="public" xmi:id="_a5f17406" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_722eba09" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg1" type="java.lang.String" xmi:id="_f3678254" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg2" type="java.lang.String" xmi:id="_4946f567" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="startElement" visibility="public" xmi:id="_a041062f" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_36594063" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg1" type="java.lang.String" xmi:id="_bb8688bf" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg2" type="java.lang.String" xmi:id="_73ed27fa" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg3" type="org.xml.sax.Attributes" xmi:id="_5cf2e45e" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <packagedElement target="org.mql.java.xml.sax.FormHandler" xmi:id="_055a6031" xmi:type="uml:GENERALIZATION"/>
+            <packagedElement target="org.mql.java.xml.ui.ButtonPanel" xmi:id="_29334090" xmi:type="uml:ASSOCIATION"/>
+            <packagedElement target="org.mql.java.xml.ui.ChoicePanel" xmi:id="_55c2da28" xmi:type="uml:ASSOCIATION"/>
+            <packagedElement target="org.mql.java.xml.ui.Form" xmi:id="_b2633359" xmi:type="uml:ASSOCIATION"/>
+        </packagedElement>
+    </packagedElement>
+    <packagedElement name="org.mql.java.xml.ui" xmi:id="_489524e3" xmi:type="uml:Package">
+        <packagedElement name="ButtonPanel" xmi:id="_ec6c5e9f" xmi:type="uml:Class">
+            <ownedAttribute name="serialVersionUID" type="long" visibility="private static final" xmi:id="_388099e5" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.ui.ButtonPanel" visibility="public" xmi:id="_09157f82" xmi:type="uml:Operation">
+                <parameter type="java.util.List"/>
+            </ownedOperation>
+        </packagedElement>
+        <packagedElement name="ChoicePanel" xmi:id="_6c3917f4" xmi:type="uml:Class">
+            <ownedAttribute name="serialVersionUID" type="long" visibility="private static final" xmi:id="_125ce79a" xmi:type="uml:Property"/>
+            <ownedAttribute name="group" type="javax.swing.ButtonGroup" visibility="public" xmi:id="_5df8b71e" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.ui.ChoicePanel" visibility="public" xmi:id="_186b1025" xmi:type="uml:Operation">
+                <parameter type="java.util.List"/>
+                <parameter type="java.lang.String"/>
+                <parameter type="java.lang.String"/>
+            </ownedOperation>
+        </packagedElement>
+        <packagedElement name="Form" xmi:id="_0655301f" xmi:type="uml:Class">
+            <ownedAttribute name="serialVersionUID" type="long" visibility="private static final" xmi:id="_b54ecd5b" xmi:type="uml:Property"/>
+            <ownedAttribute name="labelSize" type="int" visibility="private" xmi:id="_0be4f3cd" xmi:type="uml:Property"/>
+            <ownedAttribute name="container" type="javax.swing.JPanel" visibility="private" xmi:id="_0b589166" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.ui.Form" visibility="public" xmi:id="_dd67222f" xmi:type="uml:Operation">
+                <parameter type="java.lang.String"/>
+                <parameter type="int"/>
+            </ownedOperation>
+            <ownedOperation name="add" visibility="public" xmi:id="_501a6556" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="org.mql.java.xml.ui.ButtonPanel" xmi:id="_44c29898" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="add" visibility="public" xmi:id="_ba4e79f1" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="org.mql.java.xml.ui.ChoicePanel" xmi:id="_5f29226c" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+            <ownedOperation name="add" visibility="public" xmi:id="_31d05e09" xmi:type="uml:Operation">
+                <ownedParameter name="arg0" type="java.lang.String" xmi:id="_7c1a8930" xmi:type="uml:Parameter"/>
+                <ownedParameter name="arg1" type="int" xmi:id="_f18c189a" xmi:type="uml:Parameter"/>
+            </ownedOperation>
+        </packagedElement>
+        <packagedElement name="LabelTextField" xmi:id="_ef3d9fe1" xmi:type="uml:Class">
+            <ownedAttribute name="serialVersionUID" type="long" visibility="private static final" xmi:id="_44c6e309" xmi:type="uml:Property"/>
+            <ownedOperation name="org.mql.java.xml.ui.LabelTextField" visibility="public" xmi:id="_d4c45162" xmi:type="uml:Operation">
+                <parameter type="java.lang.String"/>
+                <parameter type="int"/>
+            </ownedOperation>
+            <ownedOperation name="org.mql.java.xml.ui.LabelTextField" visibility="public" xmi:id="_e547f388" xmi:type="uml:Operation">
+                <parameter type="java.lang.String"/>
+                <parameter type="int"/>
+                <parameter type="int"/>
+            </ownedOperation>
+        </packagedElement>
+    </packagedElement>
+</xmi:XMI>
