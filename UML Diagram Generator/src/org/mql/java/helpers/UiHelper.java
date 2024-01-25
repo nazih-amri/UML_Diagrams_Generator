@@ -82,8 +82,8 @@ public class UiHelper {
 	}
 
 	public static int getHeightSize(ClassModel cls) {
-	    int elementHeight = 15;
-	    return 50 + elementHeight * (cls.getFields().size() + cls.getConstructors().size() + cls.getMethods().size());
+		int elementHeight = 15;
+		return 50 + elementHeight * (cls.getFields().size() + cls.getConstructors().size() + cls.getMethods().size());
 	}
 
 	public static JScrollPane appendFields(List<FieldModel> fields, String type) {
@@ -101,7 +101,7 @@ public class UiHelper {
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 		panel.setBorder(BorderFactory.createLineBorder(Color.black));
 		if (cons != null && !cons.isEmpty())
-		cons.forEach(c -> panel.add(new JLabel(constructorToString(c))));
+			cons.forEach(c -> panel.add(new JLabel(constructorToString(c))));
 		methods.stream().forEach(meth -> panel.add(new JLabel(methodToString(meth))));
 		panel.setBackground(cons != null ? classColor() : interfaceColor());
 		JScrollPane scrollPane = new JScrollPane(panel);
@@ -112,17 +112,17 @@ public class UiHelper {
 		JPanel panel = new JPanel();
 		panel.setBorder(BorderFactory.createLineBorder(Color.black));
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-		constants.forEach(c -> panel.add(new JLabel(""+c.getConstant())));
+		constants.forEach(c -> panel.add(new JLabel("" + c.getConstant())));
 		panel.setBackground(enumColor());
 		JScrollPane scrollPane = new JScrollPane(panel);
 		return scrollPane;
 	}
-	
+
 	public static JPanel createMarginPanel(Border border) {
-	    JPanel marginPanel = new JPanel();
-	    marginPanel.setBorder(border);
-	    marginPanel.setBackground(packageColor());
-	    return marginPanel;
+		JPanel marginPanel = new JPanel();
+		marginPanel.setBorder(border);
+		marginPanel.setBackground(packageColor());
+		return marginPanel;
 	}
 
 }
