@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.lang.reflect.Parameter;
 import java.util.List;
 import javax.swing.*;
+import javax.swing.border.Border;
+
 import org.mql.java.models.ClassModel;
 import org.mql.java.models.ConstantModel;
 import org.mql.java.models.ConstructorModel;
@@ -114,6 +116,13 @@ public class UiHelper {
 		panel.setBackground(enumColor());
 		JScrollPane scrollPane = new JScrollPane(panel);
 		return scrollPane;
+	}
+	
+	public static JPanel createMarginPanel(Border border) {
+	    JPanel marginPanel = new JPanel();
+	    marginPanel.setBorder(border);
+	    marginPanel.setBackground(packageColor());
+	    return marginPanel;
 	}
 
 }

@@ -8,9 +8,9 @@ import org.mql.java.reflection.ProjectExplorer;
 
 class ProjectTest {
 
+	File file = new File("C:\\Users\\na-zi\\git\\repository3\\UML Diagram Generator");
 	@Test
 	void testProjectNotNull() {
-		File file = new File("C:\\Users\\na-zi\\git\\repository3\\UML Diagram Generator");
 		ProjectExplorer projectExplorer = new ProjectExplorer(file);
 		ProjectModel project = projectExplorer.parse();
 		assertTrue(project!=null);
@@ -18,7 +18,6 @@ class ProjectTest {
 	
 	@Test
 	void testProjectPackagesNotNull() {
-		File file = new File("C:\\Users\\na-zi\\git\\repository3\\UML Diagram Generator");
 		ProjectExplorer projectExplorer = new ProjectExplorer(file);
 		ProjectModel project = projectExplorer.parse();
 		assertTrue(project.getPackages().size()>0);
@@ -26,7 +25,6 @@ class ProjectTest {
 	
 	@Test
 	void testProjectName() {
-		File file = new File("C:\\Users\\na-zi\\git\\repository3\\UML Diagram Generator");
 		ProjectExplorer projectExplorer = new ProjectExplorer(file);
 		ProjectModel project = projectExplorer.parse();
 		assertEquals("UML Diagram Generator",project.getName());
