@@ -56,12 +56,6 @@ public class ProjectGenerator {
 		// using Optional to handle nullable results
 		Optional.ofNullable(project.getPackages())
         .ifPresent(packages -> packages.forEach(p -> appendPackage(p, root)));
-		
-//		Element relations = createNode("relations",document);
-//		Optional.ofNullable(project.getRelations())
-//        .ifPresent(relationsList -> relationsList.forEach(relation -> appendRelations(relation, relations, document)));
-//		root.appendChild(relations);
-
 	}
 
 	public static Element createNode(String name) {
@@ -114,30 +108,14 @@ public class ProjectGenerator {
 	    parent.appendChild(method);
 	}
 	
-//	private static void appendRelations(RelationModel relation, Element parent, Document document) {
-//		Element rel= createNode("relation", document);
-//		setAttribute(rel, "type", relation.getNameEnum().name().toLowerCase());
-//		Element source = createNode("source", document);
-//		source.appendChild(document.createTextNode(relation.getSource()));
-//		rel.appendChild(source);
-//		Element target = createNode("target", document);
-//		target.appendChild(document.createTextNode(relation.getTarget()));
-//		rel.appendChild(target);
-//		parent.appendChild(rel);
-//	}
-	
 	private static void appendRelationsV2(RelationModel relation, Element parent) {
 		Element rel= createNode("relation");
 		setAttribute(rel, "type", relation.getNameEnum().name().toLowerCase());
-//		Element source = createNode("source", document);
-//		source.appendChild(document.createTextNode(relation.getSource()));
-//		rel.appendChild(source);
 		Element target = createNode("target");
 		target.appendChild(document.createTextNode(relation.getTarget()));
 		rel.appendChild(target);
 		parent.appendChild(rel);
 	}
-
 
 	private static void appendClass(ClassModel cls, Element parent) {
 		Element c = createNode(cls.getModelType().toString().toLowerCase());

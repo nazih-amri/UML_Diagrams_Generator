@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
+
+import org.mql.java.loggers.ConsoleLogger;
 import org.mql.java.loggers.FileLogger;
 import org.mql.java.loggers.Logger;
 import org.mql.java.models.AnnotationModel;
@@ -13,7 +15,6 @@ import org.mql.java.models.EnumerationModel;
 import org.mql.java.models.InterfaceModel;
 import org.mql.java.models.PackageModel;
 import org.mql.java.models.ProjectModel;
-
 import static org.mql.java.helpers.ExplorerHelper.*;
 import static org.mql.java.enumerations.BaseModelType.*;
 
@@ -33,18 +34,11 @@ public class ProjectExplorer {
 			loadPackages();
 			loadModels();
 			loadRelations();
+			print(new ConsoleLogger());
+			print(new FileLogger("resources/logs/projectSummary.txt"));
 			return project;
 		}
 		return null;
-	}
-
-	public void setLogger(Logger logger) {
-		this.logger = logger;
-	}
-
-	private void log(String level, String msg) {
-		if (logger != null)
-			logger.log(level, msg);
 	}
 
 	private void loadPackages() {
@@ -82,5 +76,29 @@ public class ProjectExplorer {
 			}
 		}
 		project.setRelations(RelationFinder.find(projectClasses));
+	}
+	
+	private void print(Logger logger) {
+	    setLogger(logger);
+	    log("Project", project.getName());
+	    for (PackageModel pack : project.getPackages()) {
+	        log("Package", pack.getName());
+	        pack.getClasses().forEach(cls -> printClsInfo(cls, logger));
+	        pack.getInterfaces().forEach(in -> printIntInfo(in, logger));
+	        pack.getAnnotations().forEach(an -> printAnntInfo(an, logger));
+	        pack.getEnumerations().forEach(en -> printEnumtInfo(en, logger));
+	    }
+	    project.getRelations().forEach(relation ->
+	        logger.log("Relation", relation.getSource() + " -- " + relation.getNameEnum() + " -- " + relation.getTarget())
+	    );
+	}
+	
+	public void setLogger(Logger logger) {
+		this.logger = logger;
+	}
+	
+	private void log(String level, String msg) {
+		if (logger != null)
+			logger.log(level, msg);
 	}
 }

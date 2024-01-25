@@ -9,21 +9,11 @@ public class RelationModel implements BaseModel {
 	private RelationType name;
 	private String source;
 	private String target;
-	private FieldModel relationField;
-
 
 	public RelationModel(RelationType name, String source, String target) {
 		this.name = name;
 		this.target = target;
 		this.source = source;
-		this.relationField = null;
-	}
-
-	public RelationModel(RelationType name, String source, String target, FieldModel relationField) {
-		this.name = name;
-		this.target = target;
-		this.source = source;
-		this.relationField = relationField;
 	}
 
 	public RelationType getNameEnum() {
@@ -54,27 +44,9 @@ public class RelationModel implements BaseModel {
 	public void setTarget(String target) {
 		this.target = target;
 	}
-
-	public FieldModel getRelationField() {
-		return relationField;
-	}
-
-	public void setRelationField(FieldModel relationField) {
-		this.relationField = relationField;
-	}
 	
 	public BaseModelType getModelType() {
 		return BaseModelType.RELATION;
 	}
-
-	@Override
-	public String toString() {
-		return "RelationModel [name=" + name + ", source=" + source + ", target=" + target + ", relationField="
-				+ relationField + "]" ;
-	}
-	
-
-
-
 
 }

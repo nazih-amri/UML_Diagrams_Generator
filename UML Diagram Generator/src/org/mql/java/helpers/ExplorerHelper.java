@@ -16,9 +16,15 @@ import java.util.Map;
 import java.util.Vector;
 
 import org.mql.java.enumerations.RelationType;
+import org.mql.java.loggers.Logger;
+import org.mql.java.models.AnnotationModel;
 import org.mql.java.models.ClassModel;
+import org.mql.java.models.ConstantModel;
 import org.mql.java.models.ConstructorModel;
+import org.mql.java.models.EnumerationModel;
 import org.mql.java.models.FieldModel;
+import org.mql.java.models.InterfaceModel;
+import org.mql.java.models.MethodModel;
 import org.mql.java.models.ProjectModel;
 import org.mql.java.models.RelationModel;
 
@@ -76,27 +82,11 @@ public class ExplorerHelper {
 				                 .replace(".class", "").replace(File.separator, ".");
 	}
 	
-	public static String getAbsoluteClassPath(String path) {
-		String res = path.replace(".", "\\");
-		return res;
-	}
 	
 	public static File getRootFromPath(File file) {
 		return new File(file.getAbsolutePath().substring(0,
 				file.getAbsolutePath().lastIndexOf("\\bin\\") + 4)); 
 
-	}
-	
-	public static boolean isWrapper(Class<?> type) {
-		return  type == Boolean.class ||
-				type == Integer.class ||
-				type == Double.class ||
-				type == Float.class ||
-				type == Character.class ||
-				type == Long.class ||
-				type == Short.class ||
-				type == Byte.class ||
-				type == String.class;				
 	}
 	
     public static boolean isCollectionOfType(FieldModel field, ClassModel target) {
@@ -132,6 +122,44 @@ public class ExplorerHelper {
 		return relationTypeMap.get(name);
 	}
 	
+	public static void printClsInfo(ClassModel cls, Logger logger) {
+		logger.log("Class", cls.getSimpleName());
+		for (FieldModel f : cls.getFields()) {
+			logger.log("flied", f.getModifier()+" "+f.getType().getTypeName()+" "+f.getName());
+		}
+		for (ConstructorModel cons : cls.getConstructors()) {
+			logger.log("constructor", cons.getModifier()+" "+cons.getName());
+		}
+		for (MethodModel meth : cls.getMethods()) {
+			logger.log("method", meth.getModifier()+" "+meth.getReturnType()+" "+meth.getName());
+		}
+		for (RelationModel relation : cls.getRelations()) {
+			logger.log("Relation", relation.getSource()+" -- "+relation.getNameEnum()+" -- "+relation.getTarget());
+		}
+	}
 	
+	public static void printIntInfo(InterfaceModel in, Logger logger){
+		logger.log("Interface", in.getSimpleName());
+		for (FieldModel f : in.getFields()) {
+			logger.log("flied", f.getModifier()+" "+f.getType().getTypeName()+" "+f.getName());
+		}
+		for (MethodModel meth : in.getMethods()) {
+			logger.log("method", meth.getModifier()+" "+meth.getReturnType()+" "+meth.getName());
+		}
+	}
+	
+	public static void printAnntInfo(AnnotationModel an, Logger logger){
+		logger.log("Interface", an.getSimpleName());
+		for (MethodModel meth : an.getMethods()) {
+			logger.log("method", meth.getModifier()+" "+meth.getReturnType()+" "+meth.getName());
+		}
+	}
+	
+	public static void printEnumtInfo(EnumerationModel en, Logger logger){
+		logger.log("Interface", en.getSimpleName());
+		for (ConstantModel con : en.getConstants()) {
+			logger.log("Constant", ""+con.getConstant());
+		}
+	}
 
 }

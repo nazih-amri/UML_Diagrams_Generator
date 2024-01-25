@@ -4,11 +4,11 @@ import javax.swing.*;
 import org.mql.java.models.PackageModel;
 import org.mql.java.models.ProjectModel;
 
-public class ProjectPanel extends JPanel {
+public class ProjectEntity extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private ProjectModel project;
 
-	public ProjectPanel(ProjectModel project) {
+	public ProjectEntity(ProjectModel project) {
 		this.project = project;
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		initComponents();

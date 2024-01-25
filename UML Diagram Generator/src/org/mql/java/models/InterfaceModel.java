@@ -60,12 +60,6 @@ public class InterfaceModel implements BaseModel {
 		return simpleName;
 	}
 
-	@Override
-	public String toString() {
-		return "Interface [name=" + name + ", implemetingInterfaces=" + implemetingInterfaces + ", fields=" + fields
-				+ ", methods=" + methods + ", simpleName=" + simpleName + "]";
-	}
-
 	public BaseModelType getModelType() {
 		return BaseModelType.INTERFACE;
 	}

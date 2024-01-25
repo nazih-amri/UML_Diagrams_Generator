@@ -7,7 +7,7 @@ public class ConsoleLogger implements Logger {
 	}
 	 @Override
 	public void log(String level, String msg) {
-		 	System.out.println("### "+ level+" : "+msg);
+		 	System.out.println(level+" : "+msg);
 	}
 
 }

@@ -60,13 +60,7 @@ public class ConstructorModel implements BaseModel {
 	public void setParameterTypes(Class<?>[] parameterTypes) {
 		this.parameterTypes = parameterTypes;
 	}
-	
 
-
-	@Override
-	public String toString() {
-		return "Constructor [name=" + name + ", modifier=" + modifier + ", parameters=" + parameters + "]";
-	}
 
 	public BaseModelType getModelType() {
 		return BaseModelType.CONSTRUCTOR;

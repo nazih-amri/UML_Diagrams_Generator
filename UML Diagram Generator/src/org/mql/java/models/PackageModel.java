@@ -80,11 +80,5 @@ public class PackageModel implements BaseModel {
 	public BaseModelType getModelType() {
 		return BaseModelType.PACKAGE;
 	}
-
-	@Override
-	public String toString() {
-		return "Package [name=" + name + ", classes=" + classes + "]";
-	}
 	
-
 }

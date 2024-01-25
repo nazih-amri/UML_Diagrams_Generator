@@ -95,6 +95,7 @@ public class ClassModel implements BaseModel {
 		this.relations = relations;
 	}
 
+	// delegate methods
 	public boolean add(RelationModel e) {
 		return relations.add(e);
 	}

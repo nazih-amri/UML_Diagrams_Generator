@@ -33,4 +33,5 @@
 				visibility CDATA #REQUIRED>
 <!ATTLIST parameter type CDATA #REQUIRED>
 <!ATTLIST relation type CDATA #REQUIRED>
+<!ATTLIST constant name CDATA #REQUIRED>
 				

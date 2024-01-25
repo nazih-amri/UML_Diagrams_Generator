@@ -11,8 +11,6 @@ public class FieldModel implements BaseModel {
 	private String name;
 	private String modifier;
 	private Class<?> type;
-	private boolean isPrimitive;
-	private boolean isMemberClass;
 	private Type genericType;
 
 	public FieldModel(String name) {
@@ -24,8 +22,6 @@ public class FieldModel implements BaseModel {
 		this.name = field.getName();
 		setModifier(field.getModifiers());
 		this.type = field.getType();
-		this.isPrimitive = field.getType().isPrimitive();
-		this.isMemberClass = field.getType().isMemberClass();
 		this.genericType = field.getGenericType();
 	}
 
@@ -64,14 +60,6 @@ public class FieldModel implements BaseModel {
 
 	public void setType(Class<?> type) {
 		this.type = type;
-	}
-
-	public boolean isPrimitive() {
-		return isPrimitive;
-	}
-
-	public boolean isMemberClass() {
-		return isMemberClass;
 	}
 	
 	public Type getGenericType() {

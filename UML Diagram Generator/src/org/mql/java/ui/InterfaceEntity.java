@@ -31,7 +31,6 @@ public class InterfaceEntity extends JPanel {
 		panel.add(label);
 		panel.add(name);
 		panel.setBackground(interfaceColor());
-
 		return panel;
 	}
 }

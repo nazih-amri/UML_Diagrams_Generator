@@ -1,0 +1,271 @@
+### Project : p04-XML-Parsers
+### Package : org.mql.java.xml
+### Class : Examples
+### constructor : public org.mql.java.xml.Examples
+### method : public static void main
+### method : public void exp01
+### method : public void exp5
+### method : public void exp02
+### method : public void exp3
+### method : public void exp4
+### method : public void exp6
+### Interface : Inter1
+### flied : public static final java.lang.String NAME
+### method : public abstract String getName
+### method : public abstract void setName
+### Interface : Annot1
+### method : public abstract String name
+### Interface : Annotationn
+### method : public abstract int order
+### Interface : enum1
+### Constant : CONSTANT1
+### Constant : CONSTANT2
+### Constant : CONSTANT3
+### Package : org.mql.java.xml.dom
+### Class : AuthorsParser
+### constructor : public org.mql.java.xml.dom.AuthorsParser
+### method : public List parse
+### Class : XMLNode
+### flied : private org.w3c.dom.Node node
+### flied : private org.mql.java.xml.dom.XMLNode[] children
+### constructor : public org.mql.java.xml.dom.XMLNode
+### constructor : public org.mql.java.xml.dom.XMLNode
+### method : public String getName
+### method : public String getValue
+### method : public boolean isNamed
+### method : public Node getNode
+### method : public String getAttribute
+### method : public void setNode
+### method : public XMLNode[] getChildren
+### method : public XMLNode getchild
+### method : private void extractChildren
+### method : public int getIntAttribute
+### Class : XMLNodeProf
+### flied : private org.w3c.dom.Node node
+### flied : private org.mql.java.xml.dom.XMLNodeProf[] children
+### constructor : public org.mql.java.xml.dom.XMLNodeProf
+### constructor : public org.mql.java.xml.dom.XMLNodeProf
+### method : public String getName
+### method : public String getValue
+### method : public boolean isNamed
+### method : public Node getNode
+### method : public String getAttribute
+### method : public void setNode
+### method : public XMLNodeProf getChild
+### method : public XMLNodeProf[] getChildren
+### method : private void extractChildren
+### method : public int getIntAttribute
+### Package : org.mql.java.xml.models
+### Class : Author
+### flied : private static final org.mql.java.xml.models.Test test
+### flied : private int id
+### flied : private java.lang.String name
+### flied : private org.mql.java.xml.models.Date birthday
+### flied : private java.lang.String country
+### flied : private java.lang.String technology
+### constructor : public org.mql.java.xml.models.Author
+### method : public String getName
+### method : public String toString
+### method : public void setName
+### method : public int getId
+### method : public String getCountry
+### method : public String getTechnology
+### method : public void setId
+### method : public void setCountry
+### method : public Date getBirthday
+### method : public void setBirthday
+### method : public void setTechnology
+### Relation : org.mql.java.xml.models.Author -- AGGREGATION -- org.mql.java.xml.models.Date
+### Relation : org.mql.java.xml.models.Author -- COMPOSITION -- org.mql.java.xml.models.Test
+### Class : Child
+### flied : private java.lang.String name
+### flied : private org.mql.java.xml.models.Parent parent
+### constructor : public org.mql.java.xml.models.Child
+### method : public void hello
+### method : public void iamMethod
+### method : public void hello2
+### method : public void iamMethod2
+### method : public void iamMethod3
+### Relation : org.mql.java.xml.models.Child -- REALIZATION -- org.mql.java.xml.models.Hello
+### Relation : org.mql.java.xml.models.Child -- REALIZATION -- org.mql.java.xml.models.Hello2
+### Relation : org.mql.java.xml.models.Child -- REALIZATION -- java.io.Serializable
+### Relation : org.mql.java.xml.models.Child -- AGGREGATION -- org.mql.java.xml.models.Parent
+### Class : Date
+### flied : private int day
+### flied : private int month
+### flied : private int year
+### constructor : public org.mql.java.xml.models.Date
+### constructor : public org.mql.java.xml.models.Date
+### method : public String toString
+### method : public int getYear
+### method : public int getMonth
+### method : public void setMonth
+### method : public void setYear
+### method : public int getDay
+### method : public void setDay
+### Class : Parent
+### flied : private java.util.List children
+### constructor : public org.mql.java.xml.models.Parent
+### Relation : org.mql.java.xml.models.Parent -- AGGREGATION -- org.mql.java.xml.models.Child
+### Class : Test
+### flied : private int id
+### flied : private java.lang.String name
+### flied : private java.lang.String schoolName
+### flied : private java.lang.String matricule
+### flied : private int age
+### constructor : public org.mql.java.xml.models.Test
+### method : public String getName
+### method : public void setName
+### method : public int getId
+### method : public int getAge
+### method : public void setAge
+### method : public void setId
+### method : public String getSchoolName
+### method : public void setSchoolName
+### method : public void setMatricule
+### method : public String getMatricule
+### Class : Test2
+### flied : private int id
+### flied : private java.lang.String name
+### flied : private java.lang.String schoolName
+### flied : private java.lang.String matricule
+### flied : private int age
+### constructor : public org.mql.java.xml.models.Test2
+### method : public String getName
+### method : public void setName
+### method : public int getId
+### method : public int getAge
+### method : public void setAge
+### method : public void setId
+### method : public String getSchoolName
+### method : public void setSchoolName
+### method : public void setMatricule
+### method : public String getMatricule
+### Class : Test3
+### flied : private int id
+### flied : private java.lang.String name
+### flied : private java.lang.String schoolName
+### flied : private java.lang.String matricule
+### flied : private int age
+### constructor : public org.mql.java.xml.models.Test3
+### method : public String getName
+### method : public void setName
+### method : public int getId
+### method : public int getAge
+### method : public void setAge
+### method : public void setId
+### method : public String getSchoolName
+### method : public void setSchoolName
+### method : public void setMatricule
+### method : public String getMatricule
+### Interface : Hello
+### flied : public static final int FINALFIELD
+### method : public abstract void iamMethod
+### method : public abstract void iamMethod2
+### method : public abstract void iamMethod3
+### Interface : Hello2
+### method : public abstract void hello
+### method : public abstract void hello2
+### Package : org.mql.java.xml.sax
+### Class : FormHandler
+### constructor : public org.mql.java.xml.sax.FormHandler
+### method : public void endElement
+### method : public void startElement
+### method : public void endDocument
+### method : public void startDocument
+### Class : FormParser
+### flied : private org.mql.java.xml.ui.Form form
+### flied : private boolean choice
+### flied : private java.util.List list
+### flied : private java.lang.String attr
+### flied : private java.lang.String label
+### flied : private org.mql.java.xml.ui.ChoicePanel chpanel
+### flied : private org.mql.java.xml.ui.ButtonPanel btPanel
+### constructor : public org.mql.java.xml.sax.FormParser
+### method : public Form parse
+### method : public void characters
+### method : public void endElement
+### method : public void startElement
+### Relation : org.mql.java.xml.sax.FormParser -- ASSOCIATION -- org.mql.java.xml.ui.ButtonPanel
+### Relation : org.mql.java.xml.sax.FormParser -- ASSOCIATION -- org.mql.java.xml.ui.ChoicePanel
+### Relation : org.mql.java.xml.sax.FormParser -- ASSOCIATION -- org.mql.java.xml.ui.Form
+### Class : FormParser2
+### flied : private org.mql.java.xml.ui.Form form
+### flied : private boolean radchoice
+### flied : private boolean combochoice
+### flied : private boolean checkchoice
+### flied : private boolean btnchoice
+### flied : private java.lang.String radLabel
+### flied : private java.lang.String checkLabel
+### flied : private java.lang.String comboLabel
+### flied : private java.util.List radioChoices
+### flied : private java.util.List comboChoices
+### flied : private java.util.List checkChoices
+### flied : private java.util.List buttons
+### flied : public org.mql.java.xml.ui.ChoicePanel radio
+### flied : public org.mql.java.xml.ui.ChoicePanel combo
+### flied : public org.mql.java.xml.ui.ChoicePanel check
+### flied : public org.mql.java.xml.ui.ButtonPanel btns
+### constructor : public org.mql.java.xml.sax.FormParser2
+### method : public Form parse
+### method : public void characters
+### method : public void endElement
+### method : public void startElement
+### Relation : org.mql.java.xml.sax.FormParser2 -- ASSOCIATION -- org.mql.java.xml.ui.ButtonPanel
+### Relation : org.mql.java.xml.sax.FormParser2 -- ASSOCIATION -- org.mql.java.xml.ui.ChoicePanel
+### Relation : org.mql.java.xml.sax.FormParser2 -- ASSOCIATION -- org.mql.java.xml.ui.Form
+### Class : FormParserMe
+### flied : private org.mql.java.xml.ui.Form form
+### flied : private org.mql.java.xml.ui.ChoicePanel choicePanel
+### flied : private org.mql.java.xml.ui.ButtonPanel buttonPanel
+### flied : private java.lang.String tag
+### flied : private boolean isChoice
+### flied : private java.util.List choices
+### flied : private java.lang.String attr
+### flied : private java.lang.String label
+### constructor : public org.mql.java.xml.sax.FormParserMe
+### method : public Form parse
+### method : public void characters
+### method : public void endElement
+### method : public void startElement
+### Relation : org.mql.java.xml.sax.FormParserMe -- GENERALIZATION -- org.mql.java.xml.sax.FormHandler
+### Relation : org.mql.java.xml.sax.FormParserMe -- ASSOCIATION -- org.mql.java.xml.ui.ButtonPanel
+### Relation : org.mql.java.xml.sax.FormParserMe -- ASSOCIATION -- org.mql.java.xml.ui.ChoicePanel
+### Relation : org.mql.java.xml.sax.FormParserMe -- ASSOCIATION -- org.mql.java.xml.ui.Form
+### Package : org.mql.java.xml.ui
+### Class : ButtonPanel
+### flied : private static final long serialVersionUID
+### constructor : public org.mql.java.xml.ui.ButtonPanel
+### Class : ChoicePanel
+### flied : private static final long serialVersionUID
+### flied : public javax.swing.ButtonGroup group
+### constructor : public org.mql.java.xml.ui.ChoicePanel
+### Class : Form
+### flied : private static final long serialVersionUID
+### flied : private int labelSize
+### flied : private javax.swing.JPanel container
+### constructor : public org.mql.java.xml.ui.Form
+### method : public void add
+### method : public void add
+### method : public void add
+### Class : LabelTextField
+### flied : private static final long serialVersionUID
+### constructor : public org.mql.java.xml.ui.LabelTextField
+### constructor : public org.mql.java.xml.ui.LabelTextField
+### Relation : org.mql.java.xml.models.Author -- AGGREGATION -- org.mql.java.xml.models.Date
+### Relation : org.mql.java.xml.models.Author -- COMPOSITION -- org.mql.java.xml.models.Test
+### Relation : org.mql.java.xml.models.Child -- REALIZATION -- org.mql.java.xml.models.Hello
+### Relation : org.mql.java.xml.models.Child -- REALIZATION -- org.mql.java.xml.models.Hello2
+### Relation : org.mql.java.xml.models.Child -- REALIZATION -- java.io.Serializable
+### Relation : org.mql.java.xml.models.Child -- AGGREGATION -- org.mql.java.xml.models.Parent
+### Relation : org.mql.java.xml.models.Parent -- AGGREGATION -- org.mql.java.xml.models.Child
+### Relation : org.mql.java.xml.sax.FormParser -- ASSOCIATION -- org.mql.java.xml.ui.ButtonPanel
+### Relation : org.mql.java.xml.sax.FormParser -- ASSOCIATION -- org.mql.java.xml.ui.ChoicePanel
+### Relation : org.mql.java.xml.sax.FormParser -- ASSOCIATION -- org.mql.java.xml.ui.Form
+### Relation : org.mql.java.xml.sax.FormParser2 -- ASSOCIATION -- org.mql.java.xml.ui.ButtonPanel
+### Relation : org.mql.java.xml.sax.FormParser2 -- ASSOCIATION -- org.mql.java.xml.ui.ChoicePanel
+### Relation : org.mql.java.xml.sax.FormParser2 -- ASSOCIATION -- org.mql.java.xml.ui.Form
+### Relation : org.mql.java.xml.sax.FormParserMe -- GENERALIZATION -- org.mql.java.xml.sax.FormHandler
+### Relation : org.mql.java.xml.sax.FormParserMe -- ASSOCIATION -- org.mql.java.xml.ui.ButtonPanel
+### Relation : org.mql.java.xml.sax.FormParserMe -- ASSOCIATION -- org.mql.java.xml.ui.ChoicePanel
+### Relation : org.mql.java.xml.sax.FormParserMe -- ASSOCIATION -- org.mql.java.xml.ui.Form
